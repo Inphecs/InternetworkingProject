@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<books xmlns="http://www.uts.edu.au/31284/wsd-books"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://www.uts.edu.au/31284/wsd-books books.xsd">
+    
+    <book>
+        <title>Book 1</title>
+        <author>Gregory O'Connor</author>
+        <category>History</category>
+        <abstract>Abstract of the first book</abstract>
+        <isbn>1234567890</isbn>
+        <publishername>Name</publishername>
+        <year>2016</year>
+        <condition>New</condition>
+        <status>Reserved</status>
+    </book>
+    
+    <book>
+        <title>Book 2</title>
+        <author>Nathan Carr</author>
+        <category>Technology</category>
+        <abstract>Abstract of the second book</abstract>
+        <isbn>1234567890</isbn>
+        <publishername>Name</publishername>
+        <year>2015</year>
+        <condition>Good</condition>
+        <status>Not reserved</status>
+    </book>
+    
+    <book>
+        <title>Book 3</title>
+        <author>Il Sun Choi</author>
+        <category>Geography</category>
+        <abstract>Abstract of the third book</abstract>
+        <isbn>1234567890</isbn>
+        <publishername>Name</publishername>
+        <year>2014</year>
+        <condition>Fair</condition>
+        <status>Reserved</status>
+    </book>
+    
+    <book>
+        <title>Book 4</title>
+        <author>Chris Jeffrey</author>
+        <category>Biology</category>
+        <abstract>Abstract of the fourth book</abstract>
+        <isbn>1234567890</isbn>
+        <publishername>Name</publishername>
+        <year>2013</year>
+        <condition>Poor</condition>
+        <status>Not reserved</status>
+    </book>
+    
+    <book>
+        <title>Book 5</title>
+        <author>Marshmello</author>
+        <category>Physics</category>
+        <abstract>Abstract of the fifth book</abstract>
+        <isbn>1234567890</isbn>
+        <publishername>Name</publishername>
+        <year>2012</year>
+        <condition>New</condition>
+        <status>Not reserved</status>
+    </book>
+    
+    <book>
+        <title>Book 6</title>
+        <author>Skrillex</author>
+        <category>Maths</category>
+        <abstract>Abstract of the sixth book</abstract>
+        <isbn>1234567890</isbn>
+        <publishername>Name</publishername>
+        <year>2011</year>
+        <condition>Good</condition>
+        <status>Reserved</status>
+    </book>
+    
+    <book>
+        <title>Book 7</title>
+        <author>Illenium</author>
+        <category>English</category>
+        <abstract>Abstract of the seventh book</abstract>
+        <isbn>1234567890</isbn>
+        <publishername>Name</publishername>
+        <year>2010</year>
+        <condition>Fair</condition>
+        <status>Not reserved</status>
+    </book>
+    
+    <book>
+        <title>Book 8</title>
+        <author>San Holo</author>
+        <category>Music</category>
+        <abstract>Abstract of the eighth book</abstract>
+        <isbn>1234567890</isbn>
+        <publishername>Name</publishername>
+        <year>2009</year>
+        <condition>Poor</condition>
+        <status>Reserved</status>
+    </book>
+    
+</books>
