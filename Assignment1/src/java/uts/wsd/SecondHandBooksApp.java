@@ -4,11 +4,12 @@ import java.io.*;
 import javax.xml.bind.*;
 
 public class SecondHandBooksApp implements Serializable {
-    
+
     private String filePath;
     private Listers listers;
 
-    public SecondHandBooksApp() {}
+    public SecondHandBooksApp() {
+    }
 
     public SecondHandBooksApp(String filePath, Listers listers) {
         super();

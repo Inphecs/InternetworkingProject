@@ -4,9 +4,9 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Reservation Page</title>
     </head>
     <body>
-        <h1>Book Reservation Page</h1>
+        <h1>Book Reservation</h1>
     </body>
 </html>
