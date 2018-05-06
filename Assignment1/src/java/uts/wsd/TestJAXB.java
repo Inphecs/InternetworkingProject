@@ -1,25 +1,18 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package uts.wsd;
 
 import java.util.*;
 import java.io.*;
 import javax.xml.bind.*;
-/**
- *
- * @author Choi
- */
-public class TestJAXB implements Serializable{
-    public static void main(String[] args) throws Exception{
-    Users users = new Users();
-    users.addUser(new User("ryan@ryanheise.com", "Ryan Heise", "blahblah", "male", "green"));
-    users.addUser(new User("joe@bloggs.com", "Joe Bloggs", "foobar", "male", "yellow"));
-    JAXBContext jc = JAXBContext.newInstance(Users.class);
-    Marshaller m = jc.createMarshaller();
-    m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
-    m.marshal(users, System.out);
+
+public class TestJAXB implements Serializable {
+
+    public static void main(String[] args) throws Exception {
+        Listers listers = new Listers();
+        listers.addLister(new Lister("Ryan Heise", "ryan@ryanheise.com", "blahblah", "02/05/1990"));
+        listers.addLister(new Lister("Joe Bloggs", "joe@bloggs.com", "foobar", "01/11/1982"));
+        JAXBContext jc = JAXBContext.newInstance(Listers.class);
+        Marshaller m = jc.createMarshaller();
+        m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
+        m.marshal(listers, System.out);
     }
 }
