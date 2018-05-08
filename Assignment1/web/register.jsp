@@ -7,6 +7,8 @@
         <title>Register Page</title>
     </head>
     <body>
-        <h1>Register</h1>
+        <div class="container">
+            <h1>Register</h1>
+        </div>
     </body>
 </html>

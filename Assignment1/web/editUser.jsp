@@ -7,6 +7,8 @@
         <title>Edit User Page</title>
     </head>
     <body>
-        <h1>Edit User</h1>
+        <div class="container">
+            <h1>Edit User</h1>
+        </div>
     </body>
 </html>

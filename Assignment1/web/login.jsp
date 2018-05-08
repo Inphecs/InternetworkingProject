@@ -7,6 +7,7 @@
         <title>Login Page</title>
     </head>
     <body>
+        <div class="container">
         <h1>Login</h1>
         <form action="loginAction.jsp" method="POST">
             <table>
@@ -26,5 +27,6 @@
                 </tbody>
             </table>
         </form>
+        </div>
     </body>
 </html>

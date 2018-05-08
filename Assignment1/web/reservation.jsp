@@ -7,6 +7,8 @@
         <title>Reservation Page</title>
     </head>
     <body>
-        <h1>Book Reservation</h1>
+        <div class="container">
+            <h1>Book Reservation</h1>
+        </div>
     </body>
 </html>

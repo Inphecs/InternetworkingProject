@@ -8,30 +8,33 @@
         <title>Login Action Page</title>
     </head>
     <body>
-        <% String filePath = application.getRealPath("WEB-INF/listers.xml");%>
-        <jsp:useBean id="booksApp" class="uts.wsd.SecondHandBooksApp" scope="application">
-            <jsp:setProperty name="booksApp" property="filePath" value="<%= filePath %>"/>
-        </jsp:useBean>
+        <div class="container">
+            
+            <% String listersFilePath = application.getRealPath("WEB-INF/listers.xml");%>
+            <jsp:useBean id="textbookApp" class="uts.wsd.TextbookApplication" scope="application">
+                <jsp:setProperty name="textbookApp" property="listersFilePath" value="<%= listersFilePath%>"/>
+            </jsp:useBean>
 
-        <%
-            String email = request.getParameter("email");
-            String password = request.getParameter("password");
-            Lister lister = booksApp.getListers().login(email, password);
+            <%
+                String email = request.getParameter("email");
+                String password = request.getParameter("password");
+                Lister lister = textbookApp.getListers().login(email, password);
 
-            if (lister != null) {
-                session.setAttribute("lister", lister);
-        %>
+                if (lister != null) {
+                    session.setAttribute("lister", lister);
+            %>
 
-        <p> Login successful. Click <a href="index.jsp">here</a> to return to the main page.</p>
+            <p> Login successful. Click <a href="index.jsp">here</a> to return to the main page.</p>
 
-        <%
-            } else {
-        %>
+            <%
+                } else {
+            %>
 
-        <p> Password incorrect. Click <a href="login.jsp">here</a> to try again.</p>
+            <p> Password incorrect. Click <a href="login.jsp">here</a> to try again.</p>
 
-        <%
-            }
-        %>    
+            <%
+                }
+            %>    
+        </div>
     </body>
 </html>

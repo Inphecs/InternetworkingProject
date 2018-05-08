@@ -7,6 +7,8 @@
         <title>Logout Page</title>
     </head>
     <body>
-        <h1>Logout</h1>
+        <div class="container">
+            <h1>Logout</h1>
+        </div>
     </body>
 </html>
