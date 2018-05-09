@@ -1,18 +1,40 @@
-<%-- 
-    Document   : loginAction.jsp
-    Created on : 2018. 4. 27, 오후 3:46:47
-    Author     : Choi
---%>
-
+<%@page import="uts.wsd.*"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ include file="navbar.jsp"%>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Login Action Page</title>
     </head>
     <body>
-        <h1>Hello World!</h1>
+        <div class="container">
+            
+            <% String listersFilePath = application.getRealPath("WEB-INF/listers.xml");%>
+            <jsp:useBean id="textbookApp" class="uts.wsd.TextbookApplication" scope="application">
+                <jsp:setProperty name="textbookApp" property="listersFilePath" value="<%= listersFilePath%>"/>
+            </jsp:useBean>
+
+            <%
+                String email = request.getParameter("email");
+                String password = request.getParameter("password");
+                Lister lister = textbookApp.getListers().login(email, password);
+
+                if (lister != null) {
+                    session.setAttribute("lister", lister);
+            %>
+
+            <p> Login successful. Click <a href="index.jsp">here</a> to return to the main page.</p>
+
+            <%
+                } else {
+            %>
+
+            <p> Password incorrect. Click <a href="login.jsp">here</a> to try again.</p>
+
+            <%
+                }
+            %>    
+        </div>
     </body>
 </html>

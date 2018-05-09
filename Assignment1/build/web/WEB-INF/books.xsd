@@ -6,6 +6,20 @@
  xmlns="http://www.uts.edu.au/31284/wsd-books"
  elementFormDefault="qualified">
 
+    
+<xs:simpleType name="isbn">
+   <xs:restriction base="xs:string">
+    <xs:pattern value="\d{1,10}"/>
+   </xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="year">
+   <xs:restriction base="xs:string">
+    <xs:pattern value="\d{1,4}"/>
+   </xs:restriction>
+</xs:simpleType>
+
+
 <xs:element name="books">
     <xs:complexType mixed="true">
         <xs:sequence>

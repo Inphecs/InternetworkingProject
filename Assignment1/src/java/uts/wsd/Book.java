@@ -1,24 +1,45 @@
 package uts.wsd;
 
 import java.io.Serializable;
+import javax.xml.bind.annotation.XmlElement;
+
 
 public class Book implements Serializable {
-
-    private String title;
-    private String author;
-    private double price;
-    private int stock;
+        @XmlElement(name = "title")
+	private String title;
+	@XmlElement(name = "author")
+	private String author;
+	@XmlElement(name = "category")
+	private String category;
+	@XmlElement(name = "Abstract")
+	private String Abstract;
+	@XmlElement(name = "isbn")
+	private int isbn;
+	@XmlElement(name = "publishername")
+	private String publishername;      
+        @XmlElement(name = "year")
+        private int year;
+	@XmlElement(name = "condition")
+	private String condition;
+	@XmlElement(name = "status")
+	private String status;
 
     public Book() {
         super();
     }
 
-    public Book(String title, String author, double price, int stock) {
+    public Book(String title, String author, String category, String Abstract,
+            int isbn, String publishername, int year, String condition, String status) {
         super();
         this.title = title;
         this.author = author;
-        this.price = price;
-        this.stock = stock;
+        this.category = category;
+        this.Abstract = Abstract;
+        this.isbn = isbn;
+        this.publishername = publishername;
+        this.year = year;
+        this.condition = condition;
+        this.status = status;
     }
 
     public String getTitle() {
@@ -36,20 +57,60 @@ public class Book implements Serializable {
     public void setAuthor(String author) {
         this.author = author;
     }
-
-    public double getPrice() {
-        return price;
+    
+    public String getCategory() {
+        return category;
     }
 
-    public void setPrice(double price) {
-        this.price = price;
+    public void setCategory(String category) {
+        this.category = category;
+    }    
+
+    public String getAbstract() {
+        return Abstract;
     }
 
-    public int getStock() {
-        return stock;
+    public void setAbstract(String Abstract) {
+        this.Abstract = Abstract;
+    }    
+
+    public int getISBN() {
+        return isbn;
     }
 
-    public void setStock(int stock) {
-        this.stock = stock;
+    public void setISBN(int isbn) {
+        this.isbn = isbn;
+    }    
+
+    public String getPublisherName() {
+        return publishername;
     }
+
+    public void setPublisherName(String publishername) {
+        this.publishername = publishername;
+    }    
+
+    public int getYear() {
+        return year;
+    }
+
+    public void setYear(int year) {
+        this.year = year;
+    }    
+    
+    public String getCondition() {
+        return condition;
+    }
+
+    public void setCondition(String condition) {
+        this.condition = condition;
+    }    
+    
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }    
 }
