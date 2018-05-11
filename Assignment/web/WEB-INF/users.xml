@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="navbar.xsl"?>
+<users>
+    <user>
+        <id>Test</id>
+        <password>1234</password>
+    </user>
+    <guest></guest>
+</users>

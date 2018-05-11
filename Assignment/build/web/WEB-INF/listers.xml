@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<listers>
+    <lister>
+        <name>Greg</name>
+        <email>greg1@gmail.com</email>
+        <password>12345</password>
+        <dob>03/06/1998</dob>
+    </lister>
+    <lister>
+        <name>Nathan</name>
+        <email>nathan2@gmail.com</email>
+        <password>54321</password>
+        <dob>02/02/2000</dob>
+    </lister>
+    <lister>
+        <name>Rachid</name>
+        <email>rachid3@gmail.com</email>
+        <password>67890</password>
+        <dob>03/03/2000</dob>
+    </lister>   
+    <lister>
+        <name>Jean Mouloud</name>
+        <email>jeanmouloud4@gmail.com</email>
+        <password>09876</password>
+        <dob>04/04/2000</dob>
+    </lister>
+</listers>
