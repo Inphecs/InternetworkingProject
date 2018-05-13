@@ -1,0 +1,12 @@
+        .bookList {
+            border-collapse: collapse;            
+            width: 100%;
+            border: 1px;
+        }        
+
+        .bookList th td {
+            text-align: left;
+            padding: 8px;
+        }
+    
+        .bookList tr:nth-child(even){background-color: #f2f2f2}
