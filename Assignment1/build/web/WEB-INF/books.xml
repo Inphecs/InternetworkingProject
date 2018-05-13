@@ -1,105 +1,102 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<books>
-    <book id='Hi1'>
-        <title>Book 1</title>        
+<books xmlns="http://www.uts.edu.au/31284/wsd-books"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://www.uts.edu.au/31284/wsd-books books.xsd">
+    
+    <book id="Hi1">
+        <title>Book 1</title>
+        
         <author>Gregory O'Connor</author>
         <category>History</category>
-        <Abstract>Abstract of the first book</Abstract>
-        <isbn>1234567890</isbn>
+        <abstract>Abstract of the first book</abstract>
+        <isbn>123-45-67890-01-1</isbn>
         <publishername>Name</publishername>
         <year>2016</year>
         <condition>New</condition>
-        <status>Available</status>
-    </book>
-    <book id='Hi2'>
-        <title>Book 1</title>        
-        <author>Gregory O'Connor</author>
-        <category>History</category>
-        <Abstract>Abstract of the first book</Abstract>
-        <isbn>1234567890</isbn>
-        <publishername>Name</publishername>
-        <year>2016</year>
-        <condition>Good</condition>
         <status>Reserved</status>
-    </book>    
-    <book id='Te1'>
-        <title>Book 2</title>        
+    </book>
+    <book id="Te2">
+        <title>Book 2</title>
+        
         <author>Nathan Carr</author>
         <category>Technology</category>
-        <Abstract>Abstract of the second book</Abstract>
-        <isbn>1234567890</isbn>
+        <abstract>Abstract of the second book</abstract>
+        <isbn>123-45-67890-02-2</isbn>
         <publishername>Name</publishername>
         <year>2015</year>
         <condition>Good</condition>
-        <status>Available</status>
+        <status>Not reserved</status>
     </book>
-    <book id='Ge1'>
-        <title>Book 3</title>        
+    <book id="Ge3">
+        <title>Book 3</title>
+        
         <author>Il Sun Choi</author>
         <category>Geography</category>
-        <Abstract>Abstract of the third book</Abstract>
-        <isbn>1234567890</isbn>
+        <abstract>Abstract of the third book</abstract>
+        <isbn>123-45-67890-03-3</isbn>
         <publishername>Name</publishername>
         <year>2014</year>
         <condition>Fair</condition>
         <status>Reserved</status>
     </book>
-    <book id='Bi1'>
-        <title>Book 4</title>        
+    <book id="Bi4">
+        <title>Book 4</title>
+        
         <author>Chris Jeffrey</author>
         <category>Biology</category>
-        <Abstract>Abstract of the fourth book</Abstract>
-        <isbn>1234567890</isbn>
+        <abstract>Abstract of the fourth book</abstract>
+        <isbn>123-45-67890-04-4</isbn>
         <publishername>Name</publishername>
         <year>2013</year>
         <condition>Poor</condition>
-        <status>Available</status>
+        <status>Not reserved</status>
     </book>
-    <book id='Ph1'>
-        <id>P1</id>
-        <title>Book 5</title>        
+    <book id="Ph5">
+        <title>Book 5</title>
+        
         <author>Marshmello</author>
         <category>Physics</category>
-        <Abstract>Abstract of the fifth book</Abstract>
-        <isbn>1234567890</isbn>
+        <abstract>Abstract of the fifth book</abstract>
+        <isbn>123-45-67890-05-5</isbn>
         <publishername>Name</publishername>
         <year>2012</year>
         <condition>New</condition>
-        <status>Available</status>
+        <status>Not reserved</status>
     </book>
-    <book id='Ma1'>
-        <id>M1</id>
-        <title>Book 6</title>        
+    <book id="Ma6">
+        <title>Book 6</title>
+        
         <author>Skrillex</author>
         <category>Maths</category>
-        <Abstract>Abstract of the sixth book</Abstract>
-        <isbn>1234567890</isbn>
+        <abstract>Abstract of the sixth book</abstract>
+        <isbn>123-45-67890-06-6</isbn>
         <publishername>Name</publishername>
         <year>2011</year>
         <condition>Good</condition>
         <status>Reserved</status>
     </book>
-    <book id='En1'>
-        <title>Book 7</title>        
+    <book id="En7">
+        <title>Book 7</title>
+        
         <author>Illenium</author>
         <category>English</category>
-        <Abstract>Abstract of the seventh book</Abstract>
-        <isbn>1234567890</isbn>
+        <abstract>Abstract of the seventh book</abstract>
+        <isbn>123-45-67890-07-7</isbn>
         <publishername>Name</publishername>
         <year>2010</year>
         <condition>Fair</condition>
-        <status>Available</status>
+        <status>Not reserved</status>
     </book>
-    <book id='Mu1'>
-        <id>M1</id>
-        <title>Book 8</title>        
+    <book id="Mu8">
+        <title>Book 8</title>
+        
         <author>San Holo</author>
         <category>Music</category>
-        <Abstract>Abstract of the eighth book</Abstract>
-        <isbn>1234567890</isbn>
+        <abstract>Abstract of the eighth book</abstract>
+        <isbn>123-45-67890-08-8</isbn>
         <publishername>Name</publishername>
         <year>2009</year>
         <condition>Poor</condition>
-        <status>Available</status>
+        <status>Reserved</status>
     </book>
 </books>
