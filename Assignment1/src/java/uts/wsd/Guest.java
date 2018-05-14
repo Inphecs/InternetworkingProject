@@ -4,6 +4,7 @@ import java.io.Serializable;
 import javax.xml.bind.annotation.*;
 
 @XmlAccessorType(XmlAccessType.FIELD)
+@XmlRootElement(name = "guest")
 public class Guest implements Serializable {
 
     @XmlElement(name = "username")

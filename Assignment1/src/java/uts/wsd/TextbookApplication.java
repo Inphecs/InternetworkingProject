@@ -11,32 +11,45 @@ public class TextbookApplication implements Serializable {
     private Books books;
 
     public TextbookApplication() {
+        super();
+        System.out.println(" We here in the no mans constructor");
     }
 
     public TextbookApplication(String listersFilePath, String booksFilePath, Listers listers, Books books) {
         super();
+        System.out.println(" We here in the gooood contructor");
         this.listersFilePath = listersFilePath;
         this.booksFilePath = booksFilePath;
         this.listers = listers;
         this.books = books;
     }
-    
+
     public String getListersFilePath() {
         return listersFilePath;
     }
 
     public String getBooksFilePath() {
+        System.out.println(" We here in the getBooksFilePath method");
         return booksFilePath;
     }
-    
+
     public Listers getListers() {
         return listers;
     }
-    
+
     public Books getBooks() {
+        System.out.println(" We here in the getBooks method. Books = " + books);
         return books;
     }
     
+//Info:   We here in the no mans constructor
+//Info:   We here in the setBooksFilePath method
+//Info:   We here in the getBooks method. Books = uts.wsd.Books@b812b28
+//Info:   We here in the getBooks method. Books = uts.wsd.Books@b812b28
+
+//Info:   We here in the no mans constructor
+//Info:   We here in the getBooks method. Books = null
+
     public void saveLister(Lister lister) {
         listers.addLister(lister);
     }
@@ -44,7 +57,7 @@ public class TextbookApplication implements Serializable {
     public void saveBook(Book book) {
         books.addBook(book);
     }
-    
+
     public void setListersFilePath(String listersFilePath) throws JAXBException, FileNotFoundException, IOException {
         // Create the unmarshaller
         JAXBContext jc = JAXBContext.newInstance(Listers.class);
@@ -59,6 +72,7 @@ public class TextbookApplication implements Serializable {
 
     public void setBooksFilePath(String booksFilePath) throws JAXBException, FileNotFoundException, IOException {
         // Create the unmarshaller
+        System.out.println(" We here in the setBooksFilePath method");
         JAXBContext jc = JAXBContext.newInstance(Books.class);
         Unmarshaller u = jc.createUnmarshaller();
 

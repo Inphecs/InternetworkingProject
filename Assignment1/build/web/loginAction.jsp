@@ -10,25 +10,26 @@
     <body>
         <div class="container">
             
-<% String listersFilePath = application.getRealPath("WEB-INF/listers.xml"); %>                    
-<jsp:useBean id="listersBookApp" class="uts.wsd.TextbookApplication" scope="application">
-    <jsp:setProperty name="listersBookApp" property="listersFilePath" value="<%=listersFilePath%>"/>
-</jsp:useBean>
-            <%                	               
+            <jsp:useBean id="textbookApp" class="uts.wsd.TextbookApplication" scope="application"></jsp:useBean>
+                        
+            <%
                 String email = request.getParameter("email");
                 String password = request.getParameter("password");
-                Listers listers = listersBookApp.getListers();
-                Lister listerLogin = listers.login(email, password);
-                session.setAttribute("lister", listerLogin);
-                if (listerLogin != null) {
+                
+                Lister lister = textbookApp.getListers().login(email, password);
+
+                if (lister != null) {
+                    session.setAttribute("lister", lister);
                     response.sendRedirect("index.jsp");
                 } else {
             %>
 
             <p> Password incorrect. Click <a href="login.jsp">here</a> to try again.</p>
+
             <%
                 }
             %>    
+            
         </div>
     </body>
 </html>

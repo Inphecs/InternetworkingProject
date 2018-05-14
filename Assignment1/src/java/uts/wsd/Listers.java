@@ -11,7 +11,7 @@ public class Listers implements Serializable {
     @XmlElement(name = "lister")
     private ArrayList<Lister> listers = new ArrayList<Lister>();
 
-    public ArrayList<Lister> getListers() {
+    public ArrayList<Lister> getList() {
         return listers;
     }
 

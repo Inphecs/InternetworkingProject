@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<books xmlns="http://www.uts.edu.au/31284/wsd-books"
- xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
- xsi:schemaLocation="http://www.uts.edu.au/31284/wsd-books books.xsd">
+<books> <!-- TOTDO: Re-add books.xsd  reference. 
+                    Removed because the references to the uts website -> wsd-book 
+                    was causing runtime errors.  -->
     
     <book id="Hi1">
         <title>Book 1</title>

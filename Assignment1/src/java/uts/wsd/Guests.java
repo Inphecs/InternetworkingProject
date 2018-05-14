@@ -23,11 +23,12 @@ public class Guests implements Serializable {
         guests.remove(guest);
     }
 
-    public Guest getGuest(String username, String email)
-    {
-        for(Guest guest : guests)
-            if(guest.getUsername().equals(username)&&guest.getEmail().equals(email))
+    public Guest getGuest(String username, String email) {
+        for (Guest guest : guests) {
+            if (guest.getUsername().equals(username) && guest.getEmail().equals(email)) {
                 return guest;
+            }
+        }
         return null;
     }
 }

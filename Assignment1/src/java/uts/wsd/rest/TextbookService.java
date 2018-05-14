@@ -10,7 +10,7 @@ import uts.wsd.Books;
 
 
 @Path("/textbookApp")
-public class TextbookService { //TODO: not sure why this warning is here.
+public class TextbookService {
 
     @Context
     private ServletContext application;
