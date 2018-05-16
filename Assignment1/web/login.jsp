@@ -1,6 +1,5 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@include file="navbar.jsp"%>
-
+<%@include file="navbar.jsp" %>
         <c:set var="container">
             <listers>
                 <lister>
@@ -9,6 +8,5 @@
                 </lister>
             </listers>
         </c:set>
-
 <c:import url="login.xsl" var="stylesheet" />
 <x:transform xml  = "${container}" xslt = "${stylesheet}" />        

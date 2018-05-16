@@ -2,7 +2,7 @@
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
     <xsl:template match="listers">        
         <html>
-            <body>            
+            <body id="login">            
                 <div class="container">
                 <xsl:apply-templates />
                 </div>
@@ -11,8 +11,8 @@
     </xsl:template>
     
     <xsl:template match="lister">        
-        <h1>Login a Lister</h1>
-        <form action="loginAction.jsp" method="POST">        
+        <h1>Login</h1>
+        <form action="login_action.jsp" method="POST">        
         <table>
             <tr>
                 <td><xsl:value-of select="email" /></td>                

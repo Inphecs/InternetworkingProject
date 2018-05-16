@@ -1,14 +1,15 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@ include file="navbar.jsp"%>
+<%@include file="navbar.jsp" %>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Logout Page</title>
+        <title>Logout</title>
     </head>
-    <body>
-        <div class="container">
-            <h1>Logout</h1>
-        </div>
+    <body id="logout">        
+        <p>You have been logged out. Click here <a href="index.jsp" />
+            to return to the main page. </p>
+        <% session.invalidate();  finalize(); %>
+        
     </body>
 </html>

@@ -11,7 +11,7 @@ public class Listers implements Serializable {
     @XmlElement(name = "lister")
     private ArrayList<Lister> listers = new ArrayList<Lister>();
 
-    public ArrayList<Lister> getList() {
+    public ArrayList<Lister> getListers() {
         return listers;
     }
 
@@ -19,8 +19,13 @@ public class Listers implements Serializable {
         listers.add(lister);
     }
 
-    public void removeLister(Lister lister) {
-        listers.remove(lister);
+    public void removeLister(String email) {
+        for(Lister lister : listers)
+            if(lister.getEmail().equals(email))
+            {
+                listers.remove(lister);
+                return;
+            }        
     }
 
     public Lister login(String email, String password) {

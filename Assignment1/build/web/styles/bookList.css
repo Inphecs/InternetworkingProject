@@ -1,12 +1,25 @@
-        .bookList {
-            border-collapse: collapse;            
-            width: 100%;
-            border: 1px;
-        }        
+td#green{
+    color:green;
+}
 
-        .bookList th td {
-            text-align: left;
-            padding: 8px;
-        }
+td#red{
+    color:red;
+}
+
+.bookList {
+    border-collapse: collapse;            
+    width: 100%;
+    border: 1px;
+}        
+
+.bookList th {
+    background-color: #e7dfdd;
+    text-align: left;
+    padding: 8px;
+}
+.bookList td {
+    text-align: left;
+    padding: 8px;
+}
     
-        .bookList tr:nth-child(even){background-color: #f2f2f2}
+.bookList tr:nth-child(even){background-color: #d5d5d5}

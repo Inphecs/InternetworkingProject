@@ -9,10 +9,14 @@
 
 <c:set var="container">
     <books>
-<% ArrayList<Book> books = bookApp.getBooks().getList();
-
-        for(Book book : books)
-        {         %>                                 
+           <%                
+                String getTitle = request.getParameter("title");            
+                ArrayList<Book> books = bookApp.getBooks().getList();
+                for(Book book : books)
+                {
+                    if(book.getTitle().equals(getTitle))
+                    {
+           %>                                 
         <book>
             <title><%=book.getTitle() %></title>
             <author><%= book.getAuthor() %></author>
@@ -24,8 +28,9 @@
             <condition><%= book.getCondition() %></condition>
             <status><%= book.getStatus() %></status>         
         </book>           
-             <%}%>
+        <%          }
+                }         %>
     </books>
 </c:set>
-<c:import url="manage_books.xsl" var="stylesheet" />
+<c:import url="reserve_books.xsl" var="stylesheet" />
 <x:transform xml  = "${container}" xslt = "${stylesheet}" />                                     

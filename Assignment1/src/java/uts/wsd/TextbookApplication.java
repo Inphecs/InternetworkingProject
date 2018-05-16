@@ -2,6 +2,8 @@ package uts.wsd;
 
 import java.io.*;
 import javax.xml.bind.*;
+import javax.xml.parsers.DocumentBuilderFactory;
+import org.w3c.dom.Document;
 
 public class TextbookApplication implements Serializable {
 
@@ -11,53 +13,32 @@ public class TextbookApplication implements Serializable {
     private Books books;
 
     public TextbookApplication() {
-        super();
-        System.out.println(" We here in the no mans constructor");
     }
 
     public TextbookApplication(String listersFilePath, String booksFilePath, Listers listers, Books books) {
         super();
-        System.out.println(" We here in the gooood contructor");
         this.listersFilePath = listersFilePath;
         this.booksFilePath = booksFilePath;
         this.listers = listers;
         this.books = books;
     }
-
+    
     public String getListersFilePath() {
         return listersFilePath;
     }
 
     public String getBooksFilePath() {
-        System.out.println(" We here in the getBooksFilePath method");
         return booksFilePath;
     }
-
+    
     public Listers getListers() {
         return listers;
     }
-
-    public Books getBooks() {
-        System.out.println(" We here in the getBooks method. Books = " + books);
-        return books;
-    }
     
-//Info:   We here in the no mans constructor
-//Info:   We here in the setBooksFilePath method
-//Info:   We here in the getBooks method. Books = uts.wsd.Books@b812b28
-//Info:   We here in the getBooks method. Books = uts.wsd.Books@b812b28
-
-//Info:   We here in the no mans constructor
-//Info:   We here in the getBooks method. Books = null
-
-    public void saveLister(Lister lister) {
-        listers.addLister(lister);
-    }
-
-    public void saveBook(Book book) {
-        books.addBook(book);
-    }
-
+    public Books getBooks() {
+        return books;
+    }    
+    
     public void setListersFilePath(String listersFilePath) throws JAXBException, FileNotFoundException, IOException {
         // Create the unmarshaller
         JAXBContext jc = JAXBContext.newInstance(Listers.class);
@@ -72,7 +53,6 @@ public class TextbookApplication implements Serializable {
 
     public void setBooksFilePath(String booksFilePath) throws JAXBException, FileNotFoundException, IOException {
         // Create the unmarshaller
-        System.out.println(" We here in the setBooksFilePath method");
         JAXBContext jc = JAXBContext.newInstance(Books.class);
         Unmarshaller u = jc.createUnmarshaller();
 
@@ -84,22 +64,20 @@ public class TextbookApplication implements Serializable {
     }
 
     public void saveBooks() throws JAXBException, IOException {
-        JAXBContext jc = JAXBContext.newInstance(Book.class);
+        JAXBContext jc = JAXBContext.newInstance(Books.class);
         Marshaller m = jc.createMarshaller();
         m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
         FileOutputStream fout = new FileOutputStream(booksFilePath);
         m.marshal(books, fout);
         fout.close();
     }
-
-    public void updateBooksXML(Books books, String booksFilePath) throws Exception {
-        this.books = books;
-        this.booksFilePath = booksFilePath;
-        JAXBContext jc = JAXBContext.newInstance(Books.class);
+    
+    public void saveListers() throws JAXBException, IOException{
+        JAXBContext jc = JAXBContext.newInstance(Listers.class);
         Marshaller m = jc.createMarshaller();
-        m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
-        FileOutputStream fout = new FileOutputStream(booksFilePath);
-        m.marshal(books, fout);
+        m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT , true);
+        FileOutputStream fout = new FileOutputStream(listersFilePath);
+        m.marshal(listers, fout);
         fout.close();
     }
 }

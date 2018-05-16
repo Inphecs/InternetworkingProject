@@ -4,46 +4,42 @@
 <%@page import="uts.wsd.Book"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@include file="navbar.jsp"%>
-<!DOCTYPE html>
 <html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Book Reservation Home Page</title>
     </head>
-    <body>
+    <body id="home">
         <script>
             // Set dropdown values based on query params. (Cosmetic change only)
-            $(document).ready(function () {
+            $(document).ready(function() {
                 function getURLParameter(name) {
-                    return decodeURIComponent((new RegExp('[?|&]' + name + '=' +
-                            '([^&;]+?)(&|#|;|$)').exec(location.search) ||
-                            [null, ''])[1].replace(/\+/g, '%20')) || null;
-                }
+                      return decodeURIComponent((new RegExp('[?|&]' + name + '=' + 
+                              '([^&;]+?)(&|#|;|$)').exec(location.search) || 
+                              [null, ''])[1].replace(/\+/g, '%20')) || null;
+                }                
                 var status = getURLParameter('status');
                 var condition = getURLParameter('condition');
                 var lister = getURLParameter('lister');
-
+                
                 if (status != null) {
                     document.getElementById("status").value = status;
                 }
                 if (condition != null) {
                     document.getElementById("condition").value = condition;
-                }
+                }           
                 if (lister != null) {
                     document.getElementById("lister").value = lister;
                 }
+            });        
+            
+               $('a').click(function(){
+                    set document.getElementById('title').innerHTML;
             });
-        </script>
-
-        <%  
-            String booksFilePath = application.getRealPath("WEB-INF/books.xml");
-            String listersFilePath = application.getRealPath("WEB-INF/listers.xml");
-        %>
-        <jsp:useBean id="textbookApp" class="uts.wsd.TextbookApplication" scope="application">
-            <jsp:setProperty name="textbookApp" property="booksFilePath" value="<%=booksFilePath%>"/>
-            <jsp:setProperty name="textbookApp" property="listersFilePath" value="<%=listersFilePath%>"/>
-        </jsp:useBean>
-        
+        </script>        
+<%  String booksFilePath = application.getRealPath("WEB-INF/books.xml"); %>
+<jsp:useBean id="bookApp" class="uts.wsd.TextbookApplication" scope="application">
+    <jsp:setProperty name="bookApp" property="booksFilePath" value="<%=booksFilePath%>"/>
+</jsp:useBean>
         <div class="container">
             <h1>Book Reservation Home</h1>
             <form method="GET">
@@ -84,29 +80,36 @@
                     </tbody>
                 </table>
             </form>        
-            <c:set var="container">
-                <books>            
-                    <%
-                        int count = 0;
-                        ArrayList<Book> books = textbookApp.getBooks().getList();
-                        ArrayList<Integer> copies = textbookApp.getBooks().getNoOfCopies();
-                        
-                        for (Book book : books) {
+                <br />
+                <br />
+            <c:set var="container">                
+            <%                
+                int count = 0;
+                ArrayList<Book> books = bookApp.getBooks().getList();
+                ArrayList<Integer> copies = bookApp.getBooks().getNoOfCopies();  
+                ArrayList<Boolean> displayBooks = bookApp.getBooks().getDisplayBooks();
+            %>                
+            <books>                                                   
+                <%
+                for(Book book : books)
+                {                   
+                   if(displayBooks.get(count)){
                     %>                    
-                            <book>
-                                <title><%=book.getTitle()%></title>
-                                <author><%= book.getAuthor()%></author>
-                                <category><%= book.getCategory()%></category>
-                                <copies><%= copies.get(count)%></copies>
-                            </book>
-                    <%
-                            count++;
+                    <book>
+                        <title><%=book.getTitle() %></title>
+                        <author><%= book.getAuthor() %></author>
+                        <category><%= book.getCategory() %></category>
+                        <copies><%= copies.get(count) %></copies>
+                    </book>
+                    <% 
                         }
-                    %>
-                </books>
+                count++;                      
+                }                
+            %>
+            </books>
             </c:set>
-            <c:import url="bookList.xsl" var="stylesheet" />
-            <x:transform xml = "${container}" xslt = "${stylesheet}" />                                    
+            <c:import url="index.xsl" var="stylesheet" />
+            <x:transform xml  = "${container}" xslt = "${stylesheet}" />                                     
         </div>
     </body>
 </html>

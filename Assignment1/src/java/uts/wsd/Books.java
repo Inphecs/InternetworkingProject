@@ -12,7 +12,8 @@ import javax.xml.bind.annotation.XmlRootElement;
 public class Books {    
     @XmlElement(name="book")    
     private ArrayList<Book> books = new ArrayList<Book>();
-    private ArrayList<Integer> copies = new ArrayList<Integer>();   
+    private ArrayList<Integer> copies = new ArrayList<>();  
+    private ArrayList<Boolean> displaybooks = new ArrayList<>();
     
     public ArrayList<Book> getList() {
         return books;
@@ -35,13 +36,34 @@ public class Books {
         return null;
     }    
     
+    public ArrayList<Boolean> getDisplayBooks(){
+        Book previousBook = null;
+        for(Book book1 : books){
+            if(previousBook == null){
+                previousBook = book1;
+                displaybooks.add(Boolean.TRUE);
+            }
+            else if(book1.getTitle().equals(previousBook.getTitle()))
+            {
+                previousBook = book1;
+                displaybooks.add(Boolean.FALSE);   
+            }            
+            else
+            {
+                previousBook = book1;
+                displaybooks.add(Boolean.TRUE);
+            }                
+        }
+        return displaybooks;
+    }
+    
     public ArrayList<Integer> getNoOfCopies(){        
         for(Book book1 : books){
             int noOfCopies = noOfCopy(book1);
             copies.add(noOfCopies);
         }
         return copies;
-    }        
+    }                
     
     private int noOfCopy(Book book1)
     {
