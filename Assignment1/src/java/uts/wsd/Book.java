@@ -3,14 +3,13 @@ package uts.wsd;
 import java.io.Serializable;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlRootElement;
 
-@XmlRootElement(name="book")
 @XmlAccessorType(XmlAccessType.FIELD)
 public class Book implements Serializable {
-        @XmlElement(name = "id")
-        private int id;
+        @XmlAttribute(name = "id")
+        private String id;
         @XmlElement(name = "title")
 	private String title;
 	@XmlElement(name = "author")
@@ -26,7 +25,9 @@ public class Book implements Serializable {
         @XmlElement(name = "year")
         private int year;
 	@XmlElement(name = "condition")
-	private String condition;
+	private String condition;        
+        @XmlElement(name = "lister")
+        private String lister;
 	@XmlElement(name = "status")
 	private String status;
 
@@ -34,8 +35,8 @@ public class Book implements Serializable {
         super();
     }
 
-    public Book(int id,String title, String author, String category, String Abstract,
-            String isbn, String publishername, int year, String condition, String status) {
+    public Book(String id,String title, String author, String category, String Abstract,
+            String isbn, String publishername, int year, String condition, String lister, String status) {
         super();
         this.id = id;
         this.title = title;
@@ -46,10 +47,11 @@ public class Book implements Serializable {
         this.publishername = publishername;
         this.year = year;
         this.condition = condition;
+        this.lister = lister;
         this.status = status;
     }
     
-    public int getId(){
+    public String getId(){
         return id;        
     }
 
@@ -116,6 +118,14 @@ public class Book implements Serializable {
     public void setCondition(String condition) {
         this.condition = condition;
     }    
+    
+    public String getLister() {
+        return lister;
+    }
+    
+    public void setLister(String lister) {
+        this.lister = lister;
+    }
     
     public String getStatus() {
         return status;

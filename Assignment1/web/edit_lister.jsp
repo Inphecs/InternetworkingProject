@@ -6,13 +6,6 @@
 <%@page import="uts.wsd.Listers"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@include file="navbar.jsp" %>
-<link rel="stylesheet" type="text/css" href="styles/body.css">
-<script>
-function callMessage() {
-    alert("The account information has succesfully been edited!");
-    return true;
-}
-</script>
 
 <% 
     String name = request.getParameter("name");
@@ -60,7 +53,7 @@ function callMessage() {
 </jsp:useBean>
 <%                                                   
                     if(name!=null && email!=null && password!=null && dob!=null){                        
-                        listersApp.getListers().removeLister(email);
+                        listersApp.getListers().removeListerByEmail(email);
                         Lister modifiedLister = new Lister(name,email,password,dob); 
                         listersApp.getListers().addLister(modifiedLister);
                         session.setAttribute("name", name);

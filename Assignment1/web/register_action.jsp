@@ -1,3 +1,5 @@
+<%@page import="java.text.SimpleDateFormat"%>
+<%@page import="java.util.Date"%>
 <%@page import="uts.wsd.Lister"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@include file="navbar.jsp" %>
@@ -16,12 +18,13 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Register</title>
     </head>
-    <body id="register">        
-        <p>You have created a new account. Click here <a href="index.jsp" />
-            to return to the main page. </p>
+    <body id="register">      
+        <div class="container">
+        <p>You have created a new account. Click <a href="index.jsp">here </a>
+            to return to the main page. </p>        
+        </div>
     </body>
-</html>
-<%
+    <%
     if(name!=null && email!=null && password!=null && dob!=null){
         Lister newLister = new Lister(name,email,password,dob);
         listersApp.getListers().addLister(newLister);
@@ -29,3 +32,5 @@
         session.setAttribute("lister", newLister);
     }
 %>
+    <%@include file="footer.jsp" %>
+</html>

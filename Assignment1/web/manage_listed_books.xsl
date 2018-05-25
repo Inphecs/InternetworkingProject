@@ -2,10 +2,9 @@
 
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
     <xsl:template match="books">
-            <body id="manage">
-                <form method="GET" action="add_books.jsp">
+            <body id="managebooks">
                 <div class="container">
-                    <h2>All Books</h2>
+                    <h2>Manage My Books</h2>
                 <table class = "bookList">
 		<thead>               
 			<tr>
@@ -19,18 +18,14 @@
                         <th>Condition</th>
                         <th>Lister</th>
                         <th>Status</th>
+                        <th>Remove</th>
 			</tr>
 		</thead>
 		<tbody>
 			<xsl:apply-templates/>
 		</tbody>
                 </table>
-                <xsl:if test="add">
-                <br />
-                <input id="addBtn" class="btn btn-default" type="submit" name="addBook" value="Add" />            
-                </xsl:if>
                 </div> 
-                </form>  
             </body>
     </xsl:template>
 
@@ -48,10 +43,12 @@
             <td><xsl:value-of select="lister" /></td>                  
             <xsl:if test="status='Available'">
                 <td id="green"><xsl:value-of select="status" /></td>                    
+                <td><input type="submit" class="btn btn-danger" id="{$bookID}" name="" value="Delete" onclick="window.location.href='manage_listed_books_action.jsp?bookID={$bookID}'"/></td>                                                                                    
             </xsl:if>
             <xsl:if test="status='Reserved'">
-                <td id="red"><xsl:value-of select="status" /></td>                
-            </xsl:if>                       
+                <td id="red"><xsl:value-of select="status" /></td>   
+                <td><input type="submit" class="btn btn-danger" id="{$bookID}" name="" value="Delete" disabled="disabled" /></td>                 
+            </xsl:if>            
         </tr>         
     </xsl:template>           
 </xsl:stylesheet>

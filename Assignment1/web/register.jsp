@@ -11,4 +11,5 @@
             </listers>
         </c:set>
 <c:import url="register.xsl" var="stylesheet" />
-<x:transform xml  = "${container}" xslt = "${stylesheet}" />        
+<x:transform xml  = "${container}" xslt = "${stylesheet}" />    
+<%@include file="footer.jsp" %>

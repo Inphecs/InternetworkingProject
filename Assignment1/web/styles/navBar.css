@@ -4,19 +4,19 @@ span{
     font-size: medium;
     height: 20px;
 }
-#home, #manage, #reserve, #login, #register, #edit, #logout{
+#home, #manage, #managebooks, #reserve, #login, #register, #edit, #logout, #add{
     background-color: #f4f4f4;
 }
-#hometext, #managetext, #reservetext, #logintext, #registertext, #edittext, #logouttext{
+#hometext, #managetext, #managebookstext, #reservetext, #logintext, #registertext, #edittext, #logouttext, #addtext{
     font-family: Arial, Helvetica, sans-serif;
     font-size: medium;
 }
-#home .home, #manage .manage, #reserve .reserve, #login .login, #register .register, #edit .edit, #logout .logout
+#home .home, #manage .manage, #managebooks .managebooks, #reserve .reserve, #login .login, #register .register, #edit .edit, #logout .logout, #add .add
 {
     background-color: black;
 }
-#home .home #hometext, #manage .manage #managetext, #reserve .reserve #reservetext, #login .login #logintext, 
-#register .register #registertext, #edit .edit #edittext ,#logout .logout #logouttext
+#home .home #hometext, #manage .manage #managetext, #managebooks .managebooks #managebookstext, #reserve .reserve #reservetext, #login .login #logintext, 
+#register .register #registertext, #edit .edit #edittext ,#logout .logout #logouttext, #add .add #addtext
 {
     color: white;
 }

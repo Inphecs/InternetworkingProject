@@ -29,5 +29,5 @@ public class Guests implements Serializable {
             if(guest.getUsername().equals(username)&&guest.getEmail().equals(email))
                 return guest;
         return null;
-    }
+    }    
 }

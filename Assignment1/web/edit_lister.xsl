@@ -16,27 +16,29 @@
         <xsl:variable name="password" select="password" />
         <xsl:variable name="dob" select="dob" />
         
-        <h1>Edit a Lister</h1>
-        <form action="edit_lister.jsp" method="POST" onsubmit="return callMessage()">        
-        <table>
+        <h1>Edit</h1>
+        <form action="edit_lister.jsp" method="POST">        
+        <div class="form-group">                    
+        <table class="table" style="width:20%">
             <tr>
                 <td><label for="name">Name: </label></td>                
-                <td><input type="text" name="name" value="{$name}" /></td>
+                <td><input type="text" class="form-control" name="name" value="{$name}" /></td>
             </tr>
             <tr>
                 <td><label for="email">Email: </label></td>                
-                <td><input type="text" name="email" value="{$email}" /></td>
+                <td><input type="text" class="form-control" name="email" value="{$email}" /></td>
             </tr>            
             <tr>
                 <td><label for="password">Password: </label></td>                
-                <td><input type="password" name="password" value="{$password}" /></td>
+                <td><input type="password" class="form-control" name="password" value="{$password}" /></td>
             </tr>
             <tr>
                 <td><label for="dob">Dob: </label></td>                
-                <td><input type="text" name="dob" value="{$dob}" /></td>
+                <td><input type="text" class="form-control" name="dob" value="{$dob}" /></td>
             </tr>              
-            <tr><td></td><td><input type="submit" name="submitBtn" value="Edit"  /></td></tr>
+            <tr><td></td><td align="right"><input type="submit" class="btn btn-default" name="submitBtn" value="Edit"  /></td></tr>
         </table>
+        </div>
         </form>        
     </xsl:template>    
 </xsl:stylesheet>

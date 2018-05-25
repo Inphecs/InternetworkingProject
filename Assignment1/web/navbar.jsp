@@ -8,12 +8,17 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <% Lister lister = (Lister)session.getAttribute("lister"); 
-   String title = request.getParameter("title");    %>	        
+   String title = request.getParameter("title");    
+   String addBook = request.getParameter("addBook");
+   String logout = request.getParameter("logout");
+%>	        
 <c:set var="container">
 	<listers>
-		<% if(lister != null) {%><lister><%=lister.getName() %></lister><% } 
-                else{%><guest></guest><%} 
-                if(title!=null){%><reserve></reserve><%}%>
+		<% if(lister != null) {%><lister><%=lister.getName() %></lister>
+                <manage></manage><% } 
+                if(lister == null || logout =="true"){%><guest></guest><%} 
+                if(title!=null){%><reserve></reserve><%}
+                if(addBook!=null){%><add></add><%}%>
 	</listers>
 </c:set>
 <c:import url="navbar.xsl" var="xslt"/>

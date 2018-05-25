@@ -19,7 +19,7 @@ public class Listers implements Serializable {
         listers.add(lister);
     }
 
-    public void removeLister(String email) {
+    public void removeListerByEmail(String email) {
         for(Lister lister : listers)
             if(lister.getEmail().equals(email))
             {

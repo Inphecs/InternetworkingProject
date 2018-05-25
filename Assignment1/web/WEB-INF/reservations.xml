@@ -1,19 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
-<reservations xmlns="http://www.uts.edu.au/31284/wsd-books"
- xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
- xsi:schemaLocation="http://www.uts.edu.au/31284/wsd-books books.xsd">
-
-    <reservation>
-        <booktitle>Book1</booktitle>
-        <username>Greg</username>
-        <useremail>greg1@gmail.com</useremail>
+<reservations>
+    <reservation>    
+        <book id='Ge1'>
+            <title>Book 3</title>        
+            <author>Il Sun Choi</author>
+            <category>Geography</category>
+            <Abstract>Abstract of the third book</Abstract>
+            <isbn>123-45-67890-01-3</isbn>
+            <publishername>Name</publishername>
+            <year>2014</year>
+            <condition>Fair</condition>
+            <lister>Ian</lister>
+            <status>Reserved</status>
+        </book>
+        <guest>
+            <username>Ian</username>
+            <email>rnaahs@gmail.com</email>
+        </guest>              
     </reservation>
-    
     <reservation>
-        <booktitle>Book2</booktitle>
-        <username>Nathan</username>
-        <useremail>nathan2@gmail.com</useremail>
+        <book id='Bi1'>
+            <title>Book 4</title>        
+            <author>Chris Jeffrey</author>
+            <category>Biology</category>
+            <Abstract>Abstract of the fourth book</Abstract>
+            <isbn>123-45-67890-01-4</isbn>
+            <publishername>Name</publishername>
+            <year>2013</year>
+            <condition>Poor</condition>
+            <lister>Rachid</lister>
+            <status>Reserved</status>
+        </book>
+        <guest>
+            <username>Greg</username>
+            <email>greg1@gmail.com</email>
+        </guest>           
     </reservation>
-    
 </reservations>

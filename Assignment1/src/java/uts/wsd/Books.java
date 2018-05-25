@@ -11,9 +11,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlRootElement(name="books")
 public class Books {    
     @XmlElement(name="book")    
-    private ArrayList<Book> books = new ArrayList<Book>();
-    private ArrayList<Integer> copies = new ArrayList<>();  
-    private ArrayList<Boolean> displaybooks = new ArrayList<>();
+    private ArrayList<Book> books = new ArrayList<Book>();    
     
     public ArrayList<Book> getList() {
         return books;
@@ -36,28 +34,90 @@ public class Books {
         return null;
     }    
     
-    public ArrayList<Boolean> getDisplayBooks(){
-        Book previousBook = null;
-        for(Book book1 : books){
-            if(previousBook == null){
-                previousBook = book1;
-                displaybooks.add(Boolean.TRUE);
+    public ArrayList<Boolean> getDisplayCopies(ArrayList<Integer> noOfCopies) {
+        Integer[] noOfCategories = {0, 0, 0, 0, 0, 0, 0, 0};
+        ArrayList<Integer> copiesNumber = noOfCopies;
+        ArrayList<Boolean> displayCopies = new ArrayList<>(books.size());
+        int count = 0;
+        for(Book book : books){
+            String IdString = book.getCategory().substring(0, 2);    
+            if(copiesNumber.get(count)>1){
+                if(IdString.equals("Hi")){
+                    noOfCategories[0] += 1;
+                    if(noOfCategories[0] == 1)
+                        displayCopies.add(Boolean.TRUE);                
+                    else if(noOfCategories[0] > 1){
+                        displayCopies.add(Boolean.FALSE);
+                    }
+                }             
+                else if(IdString.equals("Te")){
+                    noOfCategories[1] += 1;
+                    if(noOfCategories[1] == 1)
+                        displayCopies.add(Boolean.TRUE);                
+                    else if(noOfCategories[1] > 1){
+                        displayCopies.add(Boolean.FALSE);
+                    }                    
+                }                
+                else if(IdString.equals("Ge")){
+                    noOfCategories[2] += 1;
+                    if(noOfCategories[2] == 1)
+                        displayCopies.add(Boolean.TRUE);                
+                    else if(noOfCategories[2] > 1){
+                        displayCopies.add(Boolean.FALSE);
+                    }                    
+                }                
+                else if(IdString.equals("Bi")){
+                    noOfCategories[3] += 1;
+                    if(noOfCategories[3] == 1)
+                        displayCopies.add(Boolean.TRUE);                
+                    else if(noOfCategories[3] > 1){
+                        displayCopies.add(Boolean.FALSE);
+                    }                    
+                }                
+                else if(IdString.equals("Ph")){
+                    noOfCategories[4] += 1;
+                    if(noOfCategories[4] == 1)
+                        displayCopies.add(Boolean.TRUE);                
+                    else if(noOfCategories[4] > 1){
+                        displayCopies.add(Boolean.FALSE);
+                    }                    
+                }                
+                else if(IdString.equals("Ma")){
+                    noOfCategories[5] += 1;
+                    if(noOfCategories[5] == 1)
+                        displayCopies.add(Boolean.TRUE);                
+                    else if(noOfCategories[5] > 1){
+                        displayCopies.add(Boolean.FALSE);
+                    }                    
+                }                
+                else if(IdString.equals("En")){
+                    noOfCategories[6] += 1;
+                    if(noOfCategories[6] == 1)
+                        displayCopies.add(Boolean.TRUE);
+                    else if(noOfCategories[6] > 1){
+                        displayCopies.add(Boolean.FALSE);
+                    }                    
+                }                
+                else if(IdString.equals("Mu")){
+                    noOfCategories[7] += 1;
+                    if(noOfCategories[7] == 1)
+                        displayCopies.add(Boolean.TRUE);
+                    else if(noOfCategories[7] > 1){
+                        displayCopies.add(Boolean.FALSE);
+                    }                    
+                }        
             }
-            else if(book1.getTitle().equals(previousBook.getTitle()))
-            {
-                previousBook = book1;
-                displaybooks.add(Boolean.FALSE);   
-            }            
-            else
-            {
-                previousBook = book1;
-                displaybooks.add(Boolean.TRUE);
-            }                
+            else{
+                displayCopies.add(Boolean.TRUE);              
+            }
+            count++;
         }
-        return displaybooks;
+        
+        return displayCopies;
     }
     
-    public ArrayList<Integer> getNoOfCopies(){        
+    public ArrayList<Integer> getNoOfCopies(){  
+        ArrayList<Integer> copies = new ArrayList<>();
         for(Book book1 : books){
             int noOfCopies = noOfCopy(book1);
             copies.add(noOfCopies);
@@ -73,5 +133,28 @@ public class Books {
                 count++;
         }
         return count;
+    }
+    
+    public Book getBookById(String id){
+            for (Book book : books) {
+            if (book.getId().equals(id)) {
+                return book;
+            }
+        }
+        return null;
+    }
+    
+    public String getBookIdByCategory(String category){
+        String Id = category.substring(0, 2);        
+        int Idnumber = 0;
+        for(Book book : books){
+            int IdLength = book.getId().length();
+            if(book.getCategory().equals(category))
+            {
+                Idnumber = Integer.parseInt(book.getId().substring(2, IdLength));
+            }            
+        }    
+        Idnumber++;
+        return Id + Idnumber;
     }
 }

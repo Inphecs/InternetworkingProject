@@ -13,18 +13,24 @@
                 </div>
                 <ul class="nav navbar-nav">                 
                     <xsl:if test="lister!= 'null'">
-                    <li class="manage"><a id="managetext" href="manage_books.jsp">Manage Books</a></li>
+                        <li class="manage"><a id="managetext" href="manage_books.jsp">All Books</a></li>
                     </xsl:if>
                     <xsl:if test="guest!= 'null'">                    
-                    <li class="home"><a id="hometext" href="index.jsp">Available Books</a></li>   
+                        <li class="home"><a id="hometext" href="index.jsp">Available Books</a></li>   
                     </xsl:if>
                     <xsl:if test="reserve!= 'null'">
-                    <li class="reserve"><a id="reservetext" href="reserve_books.jsp">Reserve Books</a></li>       
+                        <li class="reserve"><a id="reservetext" href="reserve_books.jsp">Reserve Book</a></li>       
+                    </xsl:if>
+                    <xsl:if test="add!= 'null'">
+                        <li class="add"><a id="addtext" href="add_books.jsp">Add Book</a></li>       
+                    </xsl:if>
+                    <xsl:if test="manage!= 'null'">
+                        <li class="managebooks"><a id="managebookstext" href="manage_listed_books.jsp">Manage My Books</a></li>
                     </xsl:if>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <xsl:if test="lister!= 'null'">
-                    <xsl:apply-templates/>
+                        <xsl:apply-templates/>
                     </xsl:if>
                     <xsl:if test="guest!= 'null'">
                         <li class="register"><a id="registertext" href="register.jsp"><span class="glyphicon glyphicon-user"> Register</span></a></li>
@@ -38,7 +44,7 @@
 	<xsl:template match="lister">
             <li class="edit"><a id="edittext" href='edit_lister.jsp'>My Account</a></li>
 	    <li><a href='edit_lister.jsp'>Welcome back, <xsl:apply-templates/></a></li>
-	    <li class="logout"><a id="logouttext" href='logout.jsp'><span class="glyphicon glyphicon-log-out"> Logout</span></a></li>
+	    <li class="logout"><a id="logouttext" href='logout.jsp?logout=true'><span class="glyphicon glyphicon-log-out"> Logout</span></a></li>
 	</xsl:template>
 
 </xsl:stylesheet>

@@ -10,10 +10,13 @@
 <c:set var="container">
     <books>
 <%
-   ArrayList<Book> books = booksApp.getBooks().getList();
-
-        for(Book book : books)
-        {         %>                                 
+   Lister getLister = (Lister)session.getAttribute("lister");
+   String listerName = getLister.getName();
+   
+        for(Book book : booksApp.getBooks().getList())
+        {                           
+            if(book.getLister().equals(listerName)){
+            %>
         <book>
             <id><%=book.getId() %></id>
             <title><%=book.getTitle() %></title>
@@ -27,14 +30,11 @@
             <lister><%= book.getLister() %></lister>
             <status><%= book.getStatus() %></status>         
         </book>           
-     <% 
-         } %>
-         <add></add>
+        <% } 
+        } %>
     </books> 
 </c:set>
-<c:import url="manage_books.xsl" var="stylesheet" />
+<c:import url="manage_listed_books.xsl" var="stylesheet" />
 <x:transform xml  = "${container}" xslt = "${stylesheet}" />                                     
-    <div class="container" >
-        <p style="text-align: center;">© 2018 Web Service Development. All rights reserved.</p>
-    </div>
+<%@include file="footer.jsp" %>
 </html>
