@@ -5,12 +5,14 @@ import javax.ws.rs.*;
 import javax.ws.rs.core.*;
 import javax.xml.bind.JAXBException;
 import java.io.*;
+import java.util.ArrayList;
+import uts.wsd.Book;
 import uts.wsd.TextbookApplication;
 import uts.wsd.Books;
 
 
 @Path("/textbookApp")
-public class TextbookService { //TODO: not sure why this warning is here.
+public class TextbookService {
 
     @Context
     private ServletContext application;
@@ -27,10 +29,22 @@ public class TextbookService { //TODO: not sure why this warning is here.
         }
     }
 
+    @Path("textbooks")
     @GET
-    @Path("textbooks")    
     @Produces(MediaType.APPLICATION_XML)
-    public Books getBooks() throws JAXBException, IOException {
-        return getBookApp().getBooks();
+    public ArrayList<Book> getBooksList(
+            @QueryParam("condition") String condition,
+            @QueryParam("status") String status,
+            @QueryParam("author") String author
+    ) throws JAXBException, IOException {
+        ArrayList<Book> filterdBooks = new ArrayList<Book>();
+        for (Book book : getBookApp().getBooks().getList()) {
+            if ((condition == null || book.getCondition().equals(condition))
+                    && (status == null || book.getStatus().equals(status))
+                    && (author == null || book.getAuthor().equals(author))) {
+                filterdBooks.add(book);
+            }
+        }
+        return filterdBooks;
     }
 }

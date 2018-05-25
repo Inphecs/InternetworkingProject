@@ -7,9 +7,11 @@
         <title>Logout</title>
     </head>
     <body id="logout">        
-        <p>You have been logged out. Click here <a href="index.jsp" />
-            to return to the main page. </p>
-        <% session.invalidate();  finalize(); %>
+        <% 
+            session.invalidate();  
+            finalize(); 
+            response.sendRedirect("index.jsp");
+        %>
         
     </body>
 </html>

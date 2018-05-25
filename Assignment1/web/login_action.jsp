@@ -18,8 +18,8 @@
                 String password = request.getParameter("password");
                 Listers listers = listersApp.getListers();
                 Lister listerLogin = listers.login(email, password);
-                session.setAttribute("lister", listerLogin);
                 if (listerLogin != null) {
+                    session.setAttribute("lister", listerLogin);
                     response.sendRedirect("manage_books.jsp");
                 } else {
             %>
