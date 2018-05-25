@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema
+ xmlns:xs="http://www.w3.org/2001/XMLSchema"
+ targetNamespace="http://www.uts.edu.au/31284/wsd-books"
+ xmlns="http://www.uts.edu.au/31284/wsd-books"
+ elementFormDefault="qualified">
+
+<!-- TYPE DECLARATIONS -->
+<xs:simpleType name="abstract">
+    <xs:restriction base="xs:string">
+        <xs:minLength value="1"/>
+        <xs:maxLength value="100"/>
+    </xs:restriction>
+</xs:simpleType>
+    
+<xs:simpleType name="isbn">
+    <xs:restriction base="xs:string">
+        <xs:pattern value="[0-9]{3}-[0-9]{2}-[0-9]{5}-[0-9]{2}-[0-9]{1}"/>
+    </xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="publishername">
+    <xs:restriction base="xs:string">
+        <xs:minLength value="1"/>
+        <xs:maxLength value="15"/>
+        <xs:pattern value="[a-zA-Z]+"/>
+    </xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="year">
+    <xs:restriction base="xs:integer">
+        <xs:pattern value="[0-9]{4}"/>
+    </xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="condition">
+    <xs:restriction base="xs:string">
+        <xs:pattern value="New|Good|Fair|Poor"/>
+    </xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="status">
+    <xs:restriction base="xs:string">
+        <xs:pattern value="Reserved|Available"/>
+    </xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="id">
+    <xs:restriction base="xs:string">
+        <xs:pattern value="[A-Z][a-z][0-9]"/>
+    </xs:restriction>
+</xs:simpleType>
+    
+<xs:simpleType name="email">
+    <xs:restriction base="xs:string">
+        <xs:pattern value="[a-zA-Z0-9]+@[a-z]+\.com"/>
+        <xs:whiteSpace value="collapse"/>
+    </xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="password">
+    <xs:restriction base="xs:string">
+        <xs:minLength value="5"/>
+        <xs:maxLength value="10"/>
+        <xs:pattern value="[a-zA-Z0-9]+"/>
+    </xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="username">
+    <xs:restriction base="xs:string">
+        <xs:minLength value="1"/>
+        <xs:maxLength value="15"/>
+        <xs:pattern value="[a-zA-Z]+"/>
+    </xs:restriction>
+</xs:simpleType>
+    
+    
+<!-- ELEMENT DECLARATIONS -->  
+<xs:element name="books">
+    <xs:complexType mixed="true">
+        <xs:sequence>
+         <xs:element name="book" minOccurs="0" maxOccurs="20">
+          <xs:complexType>
+           <xs:sequence>
+            
+            <xs:element name="title" type="xs:string"/>
+            <xs:element name="author" type="xs:string"/>
+            <xs:element name="category" type="xs:string"/>
+            <xs:element name="abstract" type="abstract"/>
+            <xs:element name="isbn" type="isbn"/>
+            <xs:element name="publishername" type="publishername"/>
+            <xs:element name="year" type="year"/>
+            <xs:element name="condition" type="condition"/>
+            <xs:element name="lister" type="username"/>
+            <xs:element name="status" type="status"/> 
+           </xs:sequence>
+           <xs:attribute name="id" type="id" use="required"/>  
+          </xs:complexType>
+         </xs:element>
+        </xs:sequence> 
+    </xs:complexType>
+</xs:element>
+
+<xs:element name="listers">
+    <xs:complexType mixed="true">
+        <xs:sequence>
+         <xs:element name="lister" minOccurs="0" maxOccurs="8">
+          <xs:complexType>
+           <xs:sequence>  
+            <xs:element name="name" type="username"/>
+            <xs:element name="email" type="email"/>
+            <xs:element name="password" type="password"/>
+            <xs:element name="dob" type="xs:date"/>    
+           </xs:sequence> 
+          </xs:complexType>
+         </xs:element>
+        </xs:sequence>    
+    </xs:complexType>
+</xs:element>
+
+<xs:element name="reservations">
+    <xs:complexType mixed="true">
+        <xs:sequence>
+            
+         <xs:element name="reservation" minOccurs="0" maxOccurs="8">
+          <xs:complexType>
+           <xs:sequence>
+            <xs:element name="book" minOccurs="0" maxOccurs="8">
+             <xs:complexType>
+              <xs:sequence>           
+               <xs:element name="title" type="xs:string"/>
+               <xs:element name="author" type="xs:string"/>
+               <xs:element name="category" type="xs:string"/>
+               <xs:element name="abstract" type="abstract"/>
+               <xs:element name="isbn" type="isbn"/>
+               <xs:element name="publishername" type="publishername"/>
+               <xs:element name="year" type="year"/>
+               <xs:element name="condition" type="condition"/>
+               <xs:element name="lister" type="username"/>
+               <xs:element name="status" type="status"/> 
+              </xs:sequence>
+              <xs:attribute name="id" type="id" use="required"/>  
+             </xs:complexType>
+            </xs:element>
+            
+            <xs:element name="guest" minOccurs="0" maxOccurs="8">
+             <xs:complexType>
+              <xs:sequence>
+               <xs:element name="username" type="username"/>
+               <xs:element name="email" type="email"/>
+              </xs:sequence> 
+             </xs:complexType>
+            </xs:element>
+           </xs:sequence> 
+          </xs:complexType>
+         </xs:element>
+         
+        </xs:sequence> 
+    </xs:complexType>
+</xs:element>
+
+</xs:schema>

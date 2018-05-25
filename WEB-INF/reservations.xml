@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<reservations xmlns="http://www.uts.edu.au/31284/wsd-books"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://www.uts.edu.au/31284/wsd-books books.xsd">
+    <reservation>    
+        <book id='Ge1'>
+            <title>Book 3</title>        
+            <author>Il Sun Choi</author>
+            <category>Geography</category>
+            <abstract>Abstract of the third book</abstract>
+            <isbn>123-45-67890-01-3</isbn>
+            <publishername>Name</publishername>
+            <year>2014</year>
+            <condition>Fair</condition>
+            <lister>Ian</lister>
+            <status>Reserved</status>
+        </book>
+        <guest>
+            <username>Ian</username>
+            <email>rnaahs@gmail.com</email>
+        </guest>              
+    </reservation>
+    <reservation>
+        <book id='Bi1'>
+            <title>Book 4</title>        
+            <author>Chris Jeffrey</author>
+            <category>Biology</category>
+            <abstract>Abstract of the fourth book</abstract>
+            <isbn>123-45-67890-01-4</isbn>
+            <publishername>Name</publishername>
+            <year>2013</year>
+            <condition>Poor</condition>
+            <lister>Rachid</lister>
+            <status>Reserved</status>
+        </book>
+        <guest>
+            <username>Greg</username>
+            <email>greg1@gmail.com</email>
+        </guest>           
+    </reservation>
+</reservations>

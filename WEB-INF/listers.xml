@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<listers xmlns="http://www.uts.edu.au/31284/wsd-books"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://www.uts.edu.au/31284/wsd-books books.xsd">
+    <lister>
+        <name>Greg</name>
+        <email>greg1@gmail.com</email>
+        <password>12345</password>
+        <dob>1998-06-03</dob>
+    </lister>
+    <lister>
+        <name>Nathan</name>
+        <email>nathan2@gmail.com</email>
+        <password>54321</password>
+        <dob>2000-02-02</dob>
+    </lister>
+    <lister>
+        <name>Rachid</name>
+        <email>rachid3@gmail.com</email>
+        <password>67890</password>
+        <dob>2000-03-03</dob>
+    </lister>   
+    <lister>
+        <name>Jean</name>
+        <email>jeanmouloud4@gmail.com</email>
+        <password>09876</password>
+        <dob>2000-04-04</dob>
+    </lister>
+    <lister>
+        <name>Ian</name>
+        <email>rnaahs@gmail.com</email>
+        <password>132435</password>
+        <dob>1991-12-15</dob>
+    </lister>
+</listers>
