@@ -33,16 +33,16 @@ public class TextbookService {
     public ArrayList<Book> getBooksList(
             @QueryParam("condition") String condition,
             @QueryParam("status") String status,
-            @QueryParam("author") String author
+            @QueryParam("lister") String lister
     ) throws JAXBException, IOException {
-        ArrayList<Book> filterdBooks = new ArrayList<Book>();
+        ArrayList<Book> filteredBooks = new ArrayList<Book>();
         for (Book book : getBookApp().getBooks().getList()) {
-            if ((condition == null || book.getCondition().equals(condition))
-                    && (status == null || book.getStatus().equals(status))
-                    && (author == null || book.getAuthor().equals(author))) {
-                filterdBooks.add(book);
+            if ((condition == null || book.getCondition().equalsIgnoreCase(condition))
+                    && (status == null || book.getStatus().equalsIgnoreCase(status))
+                    && (lister == null || book.getLister().equalsIgnoreCase(lister))) {
+                filteredBooks.add(book);
             }
         }
-        return filterdBooks;
+        return filteredBooks;
     }
 }
