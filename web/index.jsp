@@ -8,34 +8,7 @@
     <head>
         <title>Book Reservation Home Page</title>
     </head>
-    <body id="home">
-        <script>
-            // Set dropdown values based on query params. (Cosmetic change only)
-            $(document).ready(function() {
-                function getURLParameter(name) {
-                      return decodeURIComponent((new RegExp('[?|&]' + name + '=' + 
-                              '([^&;]+?)(&|#|;|$)').exec(location.search) || 
-                              [null, ''])[1].replace(/\+/g, '%20')) || null;
-                }                
-                var status = getURLParameter('status');
-                var condition = getURLParameter('condition');
-                var lister = getURLParameter('lister');
-                
-                if (status !== null) {
-                    document.getElementById("status").value = status;
-                }
-                if (condition !== null) {
-                    document.getElementById("condition").value = condition;
-                }           
-                if (lister !== null) {
-                    document.getElementById("lister").value = lister;
-                }
-            });        
-            
-               $('a').click(function(){
-                    set document.getElementById('title').innerHTML;
-            });
-        </script>        
+    <body id="home">        
 <%  String booksFilePath = application.getRealPath("WEB-INF/books.xml"); %>
 <jsp:useBean id="booksApp" class="uts.wsd.TextbookApplication" scope="application">
     <jsp:setProperty name="booksApp" property="booksFilePath" value="<%=booksFilePath%>"/>
