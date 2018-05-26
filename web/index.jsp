@@ -21,13 +21,13 @@
                 var condition = getURLParameter('condition');
                 var lister = getURLParameter('lister');
                 
-                if (status != null) {
+                if (status !== null) {
                     document.getElementById("status").value = status;
                 }
-                if (condition != null) {
+                if (condition !== null) {
                     document.getElementById("condition").value = condition;
                 }           
-                if (lister != null) {
+                if (lister !== null) {
                     document.getElementById("lister").value = lister;
                 }
             });        
@@ -42,47 +42,7 @@
 </jsp:useBean>
         <div class="container">
             <h1>Book Reservation Home</h1>
-            <form method="GET">
-                <table>
-                    <tbody>
-                        <tr>
-                            <th class="col-xs-3"><label for="status">Status</label></th>
-                            <th class="col-xs-3"><label for="condition">Condition</label></th>
-                            <th class="col-xs-3"><label for="lister">Lister</label></th>
-                            <th class="col-xs-3"></th>
-                        </tr>
-                        <tr>
-                            <td class="col-xs-3">
-                                <select id="status" name="status" style="width: 100%"> <!-- TODO: Add styles to style sheet. -->
-                                    <option>All</option>
-                                    <option>Reserved</option>
-                                    <option>Not Reserved</option>
-                                </select>
-                            </td>
-                            <td class="col-xs-3">
-                                <select id="condition" name="condition" style="width: 100%">
-                                    <option>All</option>
-                                    <option>As New</option>
-                                    <option>Good</option>
-                                    <option>Fair</option>
-                                    <option>Poor</option>
-                                </select>
-                            </td>
-                            <td class="col-xs-3">
-                                <select id="lister" name="lister" style="width: 100%"> <!-- TODO: Input? or Populated Drop-down? -->
-                                    <option>All</option>
-                                </select>
-                            </td>
-                            <td class="col-xs-3">
-                                <button type="submit">filter</button>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </form>        
-                <br />
-                <br />
-            <c:set var="container">                
+            <c:set var="container">               
             <%                
                 ArrayList<Book> books = booksApp.getBooks().getList();
                 ArrayList<Integer> noOfBooksList = booksApp.getBooks().getNoOfCopies();
