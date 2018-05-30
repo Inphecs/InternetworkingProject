@@ -33,7 +33,7 @@
             session.setAttribute("email", email);
             session.setAttribute("password", null);
             session.setAttribute("dob", dob);            
-            session.setAttribute("passwordError", "Password must be over 8 characters");
+            session.setAttribute("passwordError", "Password must be between 1 and 10 characters");
             session.setAttribute("emailError", null);
             session.setAttribute("nameError", null);
             session.setAttribute("dobError", null);
