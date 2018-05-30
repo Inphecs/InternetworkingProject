@@ -7,6 +7,29 @@
  elementFormDefault="qualified">
 
 <!-- TYPE DECLARATIONS -->
+
+<xs:simpleType name="title">
+    <xs:restriction base="xs:string">
+        <xs:minLength value="1"/>
+        <xs:maxLength value="60"/>
+    </xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="author">
+    <xs:restriction base="xs:string">
+        <xs:minLength value="1"/>
+        <xs:maxLength value="30"/>
+    </xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="category">
+    <xs:restriction base="xs:string">
+        <xs:minLength value="1"/>
+        <xs:maxLength value="20"/>
+        <xs:pattern value="[a-zA-Z]+"/>
+    </xs:restriction>
+</xs:simpleType>
+    
 <xs:simpleType name="abstract">
     <xs:restriction base="xs:string">
         <xs:minLength value="1"/>
@@ -74,35 +97,36 @@
         <xs:pattern value="[a-zA-Z]+"/>
     </xs:restriction>
 </xs:simpleType>
-
-<xs:simpleType name="name">
-    <xs:restriction base="xs:string">
-        <xs:minLength value="1"/>
-        <xs:maxLength value="15"/>
-        <xs:pattern value="[a-zA-Z]+"/>
-    </xs:restriction>
-</xs:simpleType>
-
-<xs:simpleType name="dob">
-    <xs:restriction base="xs:string">
-        <xs:minLength value="1"/>
-        <xs:maxLength value="15"/>
-        <xs:pattern value="[1-2][0-9]{3}-[0-1][0-9]-[0-3][0-9]"/>
-    </xs:restriction>
-</xs:simpleType>
-        
+    
     
 <!-- ELEMENT DECLARATIONS -->  
+
+<!-- GUESTS -->
+<xs:element name="guests">
+    <xs:complexType mixed="true">
+        <xs:sequence>
+         <xs:element name="guest" minOccurs="0" maxOccurs="20">
+          <xs:complexType>
+           <xs:sequence>
+            <xs:element name="username" type="username"/>
+            <xs:element name="email" type="email"/>
+           </xs:sequence>  
+          </xs:complexType>
+         </xs:element>
+        </xs:sequence> 
+    </xs:complexType>
+</xs:element>
+
+<!-- BOOKS -->
 <xs:element name="books">
     <xs:complexType mixed="true">
         <xs:sequence>
          <xs:element name="book" minOccurs="0" maxOccurs="20">
           <xs:complexType>
            <xs:sequence>
-            
-            <xs:element name="title" type="xs:string"/>
-            <xs:element name="author" type="xs:string"/>
-            <xs:element name="category" type="xs:string"/>
+            <xs:element name="title" type="title"/>
+            <xs:element name="author" type="author"/>
+            <xs:element name="category" type="category"/>
             <xs:element name="abstract" type="abstract"/>
             <xs:element name="isbn" type="isbn"/>
             <xs:element name="publishername" type="publishername"/>
@@ -118,6 +142,7 @@
     </xs:complexType>
 </xs:element>
 
+<!-- LISTERS -->
 <xs:element name="listers">
     <xs:complexType mixed="true">
         <xs:sequence>
@@ -135,10 +160,10 @@
     </xs:complexType>
 </xs:element>
 
+<!-- RESERVATIONS -->
 <xs:element name="reservations">
     <xs:complexType mixed="true">
         <xs:sequence>
-            
          <xs:element name="reservation" minOccurs="0" maxOccurs="8">
           <xs:complexType>
            <xs:sequence>
@@ -159,7 +184,6 @@
               <xs:attribute name="id" type="id" use="required"/>  
              </xs:complexType>
             </xs:element>
-            
             <xs:element name="guest" minOccurs="0" maxOccurs="8">
              <xs:complexType>
               <xs:sequence>
@@ -171,7 +195,6 @@
            </xs:sequence> 
           </xs:complexType>
          </xs:element>
-         
         </xs:sequence> 
     </xs:complexType>
 </xs:element>

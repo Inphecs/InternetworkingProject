@@ -6,10 +6,10 @@
         <title>Logout</title>
     </head>
     <body id="logout">
-        <div class="container">
-            <p>You have been logged out. Click <a href="index.jsp">here </a> to return to the main page.</p>
-        </div>                
-<% session.invalidate();  finalize(); %>
+            <% session.invalidate();  finalize(); 
+               response.sendRedirect("index.jsp");
+            %>
+            
         <%@include file="footer.jsp" %>
     </body>    
 </html>

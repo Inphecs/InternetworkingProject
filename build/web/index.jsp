@@ -8,34 +8,21 @@
     <head>
         <title>Book Reservation Home Page</title>
     </head>
-    <body id="home">
+    <body id="home">        
         <script>
-            // Set dropdown values based on query params. (Cosmetic change only)
+            // Set status dropdown values based on query param. (Cosmetic only)
             $(document).ready(function() {
                 function getURLParameter(name) {
-                      return decodeURIComponent((new RegExp('[?|&]' + name + '=' + 
-                              '([^&;]+?)(&|#|;|$)').exec(location.search) || 
-                              [null, ''])[1].replace(/\+/g, '%20')) || null;
-                }                
+                    return decodeURIComponent((new RegExp('[?|&]' + name + '=' + 
+                            '([^&;]+?)(&|#|;|$)').exec(location.search) ||
+                            [null, ''])[1].replace(/\+/g, '%20')) || null;
+                }
                 var status = getURLParameter('status');
-                var condition = getURLParameter('condition');
-                var lister = getURLParameter('lister');
-                
-                if (status != null) {
+                if (status !== null) {
                     document.getElementById("status").value = status;
                 }
-                if (condition != null) {
-                    document.getElementById("condition").value = condition;
-                }           
-                if (lister != null) {
-                    document.getElementById("lister").value = lister;
-                }
-            });        
-            
-               $('a').click(function(){
-                    set document.getElementById('title').innerHTML;
             });
-        </script>        
+        </script>    
 <%  String booksFilePath = application.getRealPath("WEB-INF/books.xml"); %>
 <jsp:useBean id="booksApp" class="uts.wsd.TextbookApplication" scope="application">
     <jsp:setProperty name="booksApp" property="booksFilePath" value="<%=booksFilePath%>"/>
@@ -46,43 +33,25 @@
                 <table>
                     <tbody>
                         <tr>
-                            <th class="col-xs-3"><label for="status">Status</label></th>
-                            <th class="col-xs-3"><label for="condition">Condition</label></th>
-                            <th class="col-xs-3"><label for="lister">Lister</label></th>
-                            <th class="col-xs-3"></th>
+                            <th class="col-xs-4"><label for="status">Status</label></th>
+                            <th class="col-xs-4"></th>
                         </tr>
                         <tr>
-                            <td class="col-xs-3">
-                                <select id="status" name="status" style="width: 100%"> <!-- TODO: Add styles to style sheet. -->
+                            <td class="col-xs-4">
+                                <select id="status" name="status" style="width: 100%">
                                     <option>All</option>
                                     <option>Reserved</option>
                                     <option>Not Reserved</option>
                                 </select>
                             </td>
-                            <td class="col-xs-3">
-                                <select id="condition" name="condition" style="width: 100%">
-                                    <option>All</option>
-                                    <option>As New</option>
-                                    <option>Good</option>
-                                    <option>Fair</option>
-                                    <option>Poor</option>
-                                </select>
-                            </td>
-                            <td class="col-xs-3">
-                                <select id="lister" name="lister" style="width: 100%"> <!-- TODO: Input? or Populated Drop-down? -->
-                                    <option>All</option>
-                                </select>
-                            </td>
-                            <td class="col-xs-3">
+                            <td class="col-xs-4">
                                 <button type="submit">filter</button>
                             </td>
                         </tr>
                     </tbody>
                 </table>
-            </form>        
-                <br />
-                <br />
-            <c:set var="container">                
+            </form>  
+            <c:set var="container">               
             <%                
                 ArrayList<Book> books = booksApp.getBooks().getList();
                 ArrayList<Integer> noOfBooksList = booksApp.getBooks().getNoOfCopies();

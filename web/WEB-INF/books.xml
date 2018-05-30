@@ -2,11 +2,12 @@
 <books xmlns="http://www.uts.edu.au/31284/wsd-books"
  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
  xsi:schemaLocation="http://www.uts.edu.au/31284/wsd-books books.xsd">
+    
     <book id="Hi1">
         <title>Book 1</title>        
         <author>Gregory O'Connor</author>
         <category>History</category>
-        <Abstract>Abstract of the first book</Abstract>
+        <abstract>Abstract of the first book</abstract>
         <isbn>123-45-67890-01-1</isbn>
         <publishername>Name</publishername>
         <year>2016</year>
@@ -18,7 +19,7 @@
         <title>Book 1</title>        
         <author>Gregory O'Connor</author>
         <category>History</category>
-        <Abstract>Abstract of the first book</Abstract>
+        <abstract>Abstract of the first book</abstract>
         <isbn>123-45-67890-01-1</isbn>
         <publishername>Name</publishername>
         <year>2016</year>
@@ -30,7 +31,7 @@
         <title>Book 1</title>        
         <author>Gregory O'Connor</author>
         <category>History</category>
-        <Abstract>Abstract of the first book</Abstract>
+        <abstract>Abstract of the first book</abstract>
         <isbn>123-45-67890-01-1</isbn>
         <publishername>Name</publishername>
         <year>2016</year>
@@ -42,7 +43,7 @@
         <title>Book 2</title>        
         <author>Nathan Carr</author>
         <category>Technology</category>
-        <Abstract>Abstract of the second book</Abstract>
+        <abstract>Abstract of the second book</abstract>
         <isbn>123-45-67890-01-2</isbn>
         <publishername>Name</publishername>
         <year>2015</year>
@@ -54,7 +55,7 @@
         <title>Book 2</title>        
         <author>Nathan Carr</author>
         <category>Technology</category>
-        <Abstract>Abstract of the second book</Abstract>
+        <abstract>Abstract of the second book</abstract>
         <isbn>123-45-67890-01-2</isbn>
         <publishername>Name</publishername>
         <year>2015</year>
@@ -66,7 +67,7 @@
         <title>Book 3</title>        
         <author>Il Sun Choi</author>
         <category>Geography</category>
-        <Abstract>Abstract of the third book</Abstract>
+        <abstract>Abstract of the third book</abstract>
         <isbn>123-45-67890-01-3</isbn>
         <publishername>Name</publishername>
         <year>2014</year>
@@ -78,7 +79,7 @@
         <title>Book 4</title>        
         <author>Chris Jeffrey</author>
         <category>Biology</category>
-        <Abstract>Abstract of the fourth book</Abstract>
+        <abstract>Abstract of the fourth book</abstract>
         <isbn>123-45-67890-01-4</isbn>
         <publishername>Name</publishername>
         <year>2013</year>
@@ -90,7 +91,7 @@
         <title>Book 5</title>        
         <author>Marshmello</author>
         <category>Physics</category>
-        <Abstract>Abstract of the fifth book</Abstract>
+        <abstract>Abstract of the fifth book</abstract>
         <isbn>123-45-67890-01-5</isbn>
         <publishername>Name</publishername>
         <year>2012</year>
@@ -102,7 +103,7 @@
         <title>Book 6</title>        
         <author>Skrillex</author>
         <category>Maths</category>
-        <Abstract>Abstract of the sixth book</Abstract>
+        <abstract>Abstract of the sixth book</abstract>
         <isbn>123-45-67890-01-6</isbn>
         <publishername>Name</publishername>
         <year>2011</year>
@@ -114,55 +115,55 @@
         <title>Book 7</title>        
         <author>Illenium</author>
         <category>English</category>
-        <Abstract>Abstract of the seventh book</Abstract>
+        <abstract>Abstract of the seventh book</abstract>
         <isbn>123-45-67890-01-7</isbn>
         <publishername>Name</publishername>
         <year>2010</year>
         <condition>Fair</condition>
-        <lister>Jean Mouloud</lister>
+        <lister>Jean</lister>
         <status>Available</status>
     </book>
     <book id='Mu1'>
         <title>Book 8</title>        
         <author>San Holo</author>
         <category>Music</category>
-        <Abstract>Abstract of the eighth book</Abstract>
+        <abstract>Abstract of the eighth book</abstract>
         <isbn>123-45-67890-01-8</isbn>
         <publishername>Name</publishername>
         <year>2009</year>
         <condition>Good</condition>
-        <lister>Jean Mouloud</lister>
+        <lister>Jean</lister>
         <status>Available</status>
     </book>
         <book id='Mu2'>
         <title>Book 8</title>        
         <author>San Holo</author>
         <category>Music</category>
-        <Abstract>Abstract of the eighth book</Abstract>
+        <abstract>Abstract of the eighth book</abstract>
         <isbn>123-45-67890-01-8</isbn>
         <publishername>Name</publishername>
         <year>2009</year>
         <condition>Fair</condition>
-        <lister>Jean Mouloud</lister>
+        <lister>Jean</lister>
         <status>Available</status>
     </book>
         <book id='Mu3'>
         <title>Book 8</title>        
         <author>San Holo</author>
         <category>Music</category>
-        <Abstract>Abstract of the eighth book</Abstract>
+        <abstract>Abstract of the eighth book</abstract>
         <isbn>123-45-67890-01-8</isbn>
         <publishername>Name</publishername>
         <year>2009</year>
         <condition>Poor</condition>
-        <lister>Jean Mouloud</lister>
+        <lister>Jean</lister>
         <status>Available</status>
     </book>
         <book id='Mu4'>
         <title>Book 8</title>        
         <author>San Holo</author>
         <category>Music</category>
-        <Abstract>Abstract of the eighth book</Abstract>
+        <abstract>Abstract of the eighth book</abstract>
         <isbn>123-45-67890-01-8</isbn>
         <publishername>Name</publishername>
         <year>2009</year>

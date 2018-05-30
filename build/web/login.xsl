@@ -11,19 +11,21 @@
     <xsl:template match="lister">        
         <h1>Login</h1>
         <br />
-        <form action="login_action.jsp" method="POST">        
-        <div class="form-group">                    
-        <table class="table" style="width:25%">
+        <form action="login_action.jsp" method="POST">      
+        <div class="form-group">        
+        <table class="table" style="width:25%;">
             <tr>
-                <td><xsl:value-of select="email" /></td>                
-                <td><input type="text" class="form-control" name="email" /></td>
+                <td><xsl:value-of select="email" /></td>
+                <td><input type="text" class="form-control" id="email" name="email" /></td>                   
             </tr>
             <tr>
                 <td><xsl:value-of select="password" /></td>                
-                <td><input type="password" class="form-control" name="password" /></td>
+                <td><input type="password" class="form-control" id="password" name="password" /></td>
             </tr>
             <tr><td></td><td align="right"><input type="submit" class="btn btn-default" name="submitBtn" value="Login" /></td></tr>
         </table>
+        <label style="color:red;" id="loginemailError" name="emailError"><xsl:value-of select="emailError" /></label>
+        <label style="color:red;" id="loginpasswordError" name="passwordError"><xsl:value-of select="passwordError" /></label>
         </div>
         </form>        
     </xsl:template>

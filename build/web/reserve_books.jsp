@@ -27,26 +27,6 @@ function selectOnlyThis(id) {
         container.style.display = "block";
     }
 }
-//function dataCheck(){
-//    var x = document.getElementsByClassName('checkbox-select');
-//    var namefield = document.getElementById("name").value;
-//    var emailfield = document.getElementById("email").value;
-//    for(var i = 0; i< x.length; i++)
-//    {
-//        if(x[i].checked){
-//            document.getElementById("reserve").submit();
-//        }
-//    }
-//    if(namefield == ""){
-//        alert("Plese fill in the name field");        
-//    }
-//    else if(emailfield == ""){
-//        alert("Please fill in the email field");
-//    }
-//    else
-//    alert("Please select one of the books!");
-//    return false;
-//} 
 </script>    
 </head>
 <%  String booksFilePath = application.getRealPath("WEB-INF/books.xml"); %>
