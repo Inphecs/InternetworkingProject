@@ -1,0 +1,139 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI (http://jax-ws.java.net). RI's version is Metro/2.3.2-b608 (trunk-7979; 2015-01-21T12:50:19+0000) JAXWS-RI/2.2.11-b150120.1832 JAXWS-API/2.2.12 JAXB-RI/2.2.12-b141219.1637 JAXB-API/2.2.13-b141020.1521 svn-revision#unknown. --><xs:schema xmlns:tns="http://soap.wsd.uts/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://soap.wsd.uts/">
+
+<xs:element name="addBook" type="tns:addBook"/>
+
+<xs:element name="addBookResponse" type="tns:addBookResponse"/>
+
+<xs:element name="book" type="tns:book"/>
+
+<xs:element name="books" type="tns:books"/>
+
+<xs:element name="createBook" type="tns:createBook"/>
+
+<xs:element name="createBookResponse" type="tns:createBookResponse"/>
+
+<xs:element name="deleteBook" type="tns:deleteBook"/>
+
+<xs:element name="deleteBookResponse" type="tns:deleteBookResponse"/>
+
+<xs:element name="fetchBooks" type="tns:fetchBooks"/>
+
+<xs:element name="fetchBooksResponse" type="tns:fetchBooksResponse"/>
+
+<xs:element name="getBookById" type="tns:getBookById"/>
+
+<xs:element name="getBookByIdResponse" type="tns:getBookByIdResponse"/>
+
+<xs:element name="login" type="tns:login"/>
+
+<xs:element name="loginResponse" type="tns:loginResponse"/>
+
+<xs:complexType name="addBook">
+<xs:sequence>
+<xs:element name="arg0" type="tns:book" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="book">
+<xs:sequence>
+<xs:element name="title" type="xs:string" minOccurs="0"/>
+<xs:element name="author" type="xs:string" minOccurs="0"/>
+<xs:element name="category" type="xs:string" minOccurs="0"/>
+<xs:element name="Abstract" type="xs:string" minOccurs="0"/>
+<xs:element name="isbn" type="xs:string" minOccurs="0"/>
+<xs:element name="publishername" type="xs:string" minOccurs="0"/>
+<xs:element name="year" type="xs:int"/>
+<xs:element name="condition" type="xs:string" minOccurs="0"/>
+<xs:element name="lister" type="xs:string" minOccurs="0"/>
+<xs:element name="status" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+<xs:attribute name="id" type="xs:string"/>
+</xs:complexType>
+
+<xs:complexType name="addBookResponse">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="login">
+<xs:sequence>
+<xs:element name="arg0" type="xs:string" minOccurs="0"/>
+<xs:element name="arg1" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="loginResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:lister" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="lister">
+<xs:sequence>
+<xs:element name="name" type="xs:string" minOccurs="0"/>
+<xs:element name="email" type="xs:string" minOccurs="0"/>
+<xs:element name="password" type="xs:string" minOccurs="0"/>
+<xs:element name="dob" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getBookById">
+<xs:sequence>
+<xs:element name="arg0" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getBookByIdResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:book" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="createBook">
+<xs:sequence>
+<xs:element name="arg0" type="xs:string" minOccurs="0"/>
+<xs:element name="arg1" type="xs:string" minOccurs="0"/>
+<xs:element name="arg2" type="xs:string" minOccurs="0"/>
+<xs:element name="arg3" type="xs:string" minOccurs="0"/>
+<xs:element name="arg4" type="xs:string" minOccurs="0"/>
+<xs:element name="arg5" type="xs:string" minOccurs="0"/>
+<xs:element name="arg6" type="xs:int"/>
+<xs:element name="arg7" type="xs:string" minOccurs="0"/>
+<xs:element name="arg8" type="xs:string" minOccurs="0"/>
+<xs:element name="arg9" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="createBookResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:book" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="deleteBook">
+<xs:sequence>
+<xs:element name="arg0" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="deleteBookResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="fetchBooks">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="fetchBooksResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:books" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="books">
+<xs:sequence>
+<xs:element name="book" type="tns:book" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>

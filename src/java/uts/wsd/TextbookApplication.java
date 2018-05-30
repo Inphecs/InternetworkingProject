@@ -1,7 +1,10 @@
 package uts.wsd;
 
 import java.io.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.xml.bind.*;
+import uts.wsd.soap.TextbookSOAP;
 
 public class TextbookApplication implements Serializable {
 
@@ -108,13 +111,17 @@ public class TextbookApplication implements Serializable {
         fin.close();
     }    
     
-    public void saveBooks() throws JAXBException, IOException {
-        JAXBContext jc = JAXBContext.newInstance(Books.class);
-        Marshaller m = jc.createMarshaller();
-        m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
-        FileOutputStream fout = new FileOutputStream(booksFilePath);
-        m.marshal(books, fout);
-        fout.close();
+    public void saveBooks() {
+        try {
+            JAXBContext jc = JAXBContext.newInstance(Books.class);
+            Marshaller m = jc.createMarshaller();
+            m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
+            FileOutputStream fout = new FileOutputStream(booksFilePath);
+            m.marshal(books, fout);
+            fout.close();
+        } catch (Exception ex) {
+            Logger.getLogger(TextbookApplication.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
     
     public void saveListers() throws JAXBException, IOException{
