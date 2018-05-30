@@ -13,7 +13,7 @@
         <br />
         <form action="add_books_action.jsp" method="GET">        
         <div class="form-group">                    
-        <table class="table" style="width:20%">            
+        <table class="table" style="width:25%">            
             <tr>
                 <td><xsl:value-of select="bookTitle" /></td>                
                 <td><input type="text" class="form-control" name="bookTitle" /></td>
@@ -62,6 +62,12 @@
             </tr>
             <tr><td></td><td align="right"><input type="submit" class="btn btn-default" name="addBtn" value="Add" /></td></tr>
         </table>
+            <label style="color:red;" id="titleError" name="titleError"><xsl:value-of select="titleError" /></label>
+            <label style="color:red;" id="authorError" name="authorError"><xsl:value-of select="authorError" /></label>
+            <label style="color:red;" id="abstractError" name="abstractError"><xsl:value-of select="abstractError" /></label>
+            <label style="color:red;" id="isbnError" name="isbnError"><xsl:value-of select="isbnError" /></label>                                     
+            <label style="color:red;" id="publisherError" name="publisherError"><xsl:value-of select="publisherError" /></label>            
+            <label style="color:red;" id="yearError" name="yearError"><xsl:value-of select="yearError" /></label>                                     
         </div>
         </form>        
     </xsl:template>

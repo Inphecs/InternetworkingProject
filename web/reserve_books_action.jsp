@@ -1,3 +1,4 @@
+<%@page import="uts.wsd.Guests"%>
 <%@page import="uts.wsd.Reservation"%>
 <%@page import="uts.wsd.Book"%>
 <%@page import="uts.wsd.Reservations"%>
@@ -33,8 +34,13 @@
                 Book book = booksApp.getBooks().getBookById(getBookId);                                
                 book.setStatus("Reserved");
                 booksApp.saveBooks();
-                               
+                             
+                Guests guests = guestsApp.getGuests();
                 Guest guest = new Guest(getUserName, getUserEmail);     
+                if(guests.getGuest(getUserName, getUserEmail)==null){
+                    guests.addGuest(guest);
+                    guestsApp.saveGuests();
+                }
                 if(guest!=null){
                     reservationsApp.getReservations().addReservation(new Reservation(book, guest));
                     reservationsApp.saveReservations();                

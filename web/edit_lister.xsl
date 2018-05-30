@@ -17,16 +17,18 @@
         <xsl:variable name="dob" select="dob" />
         
         <h1>Edit</h1>
-        <form action="edit_lister.jsp" method="POST">        
+        <form action="edit_lister_action.jsp" method="POST">        
         <div class="form-group">                    
-        <table class="table" style="width:20%">
+        <table class="table" style="width:25%">
             <tr>
                 <td><label for="name">Name: </label></td>                
-                <td><input type="text" class="form-control" name="name" value="{$name}" /></td>
+                <td><input type="text" class="form-control" name="name" value="{$name}" readonly="readonly" /></td>
+                <input type="hidden" class="form-control" name="name" value="{$name}"/>
             </tr>
             <tr>
                 <td><label for="email">Email: </label></td>                
-                <td><input type="text" class="form-control" name="email" value="{$email}" /></td>
+                <td><input type="text" class="form-control" name="email" value="{$email}" readonly="readonly"/></td>
+                <input type="hidden" class="form-control" name="email" value="{$email}"/>
             </tr>            
             <tr>
                 <td><label for="password">Password: </label></td>                
@@ -37,7 +39,10 @@
                 <td><input type="text" class="form-control" name="dob" value="{$dob}" /></td>
             </tr>              
             <tr><td></td><td align="right"><input type="submit" class="btn btn-default" name="submitBtn" value="Edit"  /></td></tr>
-        </table>
+        </table>            
+            <label style="color:red;" id="passwordError" name="passwordError"><xsl:value-of select="passwordError" /></label>
+            <label style="color:red;" id="dobError" name="dobError"><xsl:value-of select="dobError" /></label>                    
+            <label style="color:green;" id="pass" name="pass"><xsl:value-of select="pass" /></label>                     
         </div>
         </form>        
     </xsl:template>    

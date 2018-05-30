@@ -1,0 +1,66 @@
+#nameError {
+    position: absolute;
+    left: 380px;
+    top: 180px;
+    white-space: nowrap;
+}
+#emailError {
+    position: absolute;
+    left: 380px;
+    top: 230px;           
+    white-space: nowrap;
+}
+#passwordError{  
+    position: absolute;
+    left: 380px;
+    top: 280px;  
+    white-space: nowrap;    
+}
+#dobError{
+    position: absolute;
+    left: 380px;
+    top: 330px;  
+    white-space: nowrap;    
+}
+#loginemailError {
+    position: absolute;
+    left:380px;
+    top:180px;
+    white-space: nowrap;    
+}
+#loginpasswordError{
+    position: absolute;
+    top:50px;
+    white-space: nowrap;    
+}
+#titleError{
+    position: absolute;
+    left: 380px;
+    top: 180px;      
+    white-space: nowrap;    
+}
+#authorError{
+    position: absolute;
+    top: 50px;    
+    white-space: nowrap;    
+}
+#abstractError{
+    position: absolute;
+    top: 100px;     
+    white-space: nowrap;    
+}
+#isbnError{
+    position: absolute;
+    top: 50px;    
+    white-space: nowrap;    
+}
+#publisherError{
+    position: absolute;
+    top: 50px;         
+    white-space: nowrap;    
+}
+#yearError{
+    position: absolute;
+    top: 50px;       
+    white-space: nowrap;    
+}

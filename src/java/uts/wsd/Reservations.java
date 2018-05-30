@@ -5,7 +5,7 @@ import java.io.Serializable;
 import javax.xml.bind.annotation.*;
 
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlRootElement(name = "reservations")
+@XmlRootElement(name = "reservations", namespace="http://www.uts.edu.au/31284/wsd-books")
 public class Reservations implements Serializable {
     @XmlElement(name = "reservation")
     private ArrayList<Reservation> reservations = new ArrayList<Reservation>();

@@ -8,7 +8,7 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlRootElement(name="books")
+@XmlRootElement(name="books", namespace="http://www.uts.edu.au/31284/wsd-books")
 public class Books {    
     @XmlElement(name="book")    
     private ArrayList<Book> books = new ArrayList<Book>();    
@@ -21,8 +21,8 @@ public class Books {
         books.add(book);
     }
 
-    public boolean removeBook(Book book) {
-        return books.remove(book);
+    public void removeBook(Book book) {
+        books.remove(book);
     }
 
     public Book getBook(String title) {
@@ -32,17 +32,7 @@ public class Books {
             }
         }
         return null;
-    }   
-    
-    public Book getBookById(String id){
-        for (Book book : books) {
-            System.out.println(book.getId());
-            if (book.getId().equals(id)) {
-                return book;
-            }
-        }
-        return null;
-    }
+    }    
     
     public ArrayList<Boolean> getDisplayCopies(ArrayList<Integer> noOfCopies) {
         Integer[] noOfCategories = {0, 0, 0, 0, 0, 0, 0, 0};
@@ -145,20 +135,26 @@ public class Books {
         return count;
     }
     
-    public String getBookIdByCategory(String category){
-        if (category.length() >= 2) {
-            String Id = category.substring(0, 2);        
-            int Idnumber = 0;
-            for(Book book : books){
-                int IdLength = book.getId().length();
-                if(book.getCategory().equals(category))
-                {
-                    Idnumber = Integer.parseInt(book.getId().substring(2, IdLength));
-                }            
-            }    
-            Idnumber++;
-            return Id + Idnumber;
+    public Book getBookById(String id){
+            for (Book book : books) {
+            if (book.getId().equals(id)) {
+                return book;
             }
+        }
         return null;
+    }    
+   
+    public String getBookIdByCategory(String category){
+        String Id = category.substring(0, 2);        
+        int Idnumber = 0;
+        for(Book book : books){
+            int IdLength = book.getId().length();
+            if(book.getCategory().equals(category))
+            {
+                Idnumber = Integer.parseInt(book.getId().substring(2, IdLength));
+            }            
+        }    
+        Idnumber++;
+        return Id + Idnumber;
     }
 }
