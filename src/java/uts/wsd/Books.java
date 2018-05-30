@@ -21,8 +21,8 @@ public class Books {
         books.add(book);
     }
 
-    public void removeBook(Book book) {
-        books.remove(book);
+    public boolean removeBook(Book book) {
+        return books.remove(book);
     }
 
     public Book getBook(String title) {
@@ -33,6 +33,16 @@ public class Books {
         }
         return null;
     }    
+    
+        
+    public Book getBookById(String id){
+        for (Book book : books) {
+            if (book.getId().equals(id)) {
+                return book;
+            }
+        }
+        return null;
+    } 
     
     public ArrayList<Boolean> getDisplayCopies(ArrayList<Integer> noOfCopies) {
         Integer[] noOfCategories = {0, 0, 0, 0, 0, 0, 0, 0};
@@ -133,16 +143,7 @@ public class Books {
                 count++;
         }
         return count;
-    }
-    
-    public Book getBookById(String id){
-            for (Book book : books) {
-            if (book.getId().equals(id)) {
-                return book;
-            }
-        }
-        return null;
-    }    
+    }   
    
     public String getBookIdByCategory(String category){
         String Id = category.substring(0, 2);        
