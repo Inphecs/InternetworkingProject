@@ -6,10 +6,10 @@
         <title>Logout</title>
     </head>
     <body id="logout">
-            <% session.invalidate();  finalize(); 
-               response.sendRedirect("index.jsp");
-            %>
-            
+        <% session.invalidate();
+            finalize();
+            response.sendRedirect("index.jsp");
+        %>
         <%@include file="footer.jsp" %>
     </body>    
 </html>

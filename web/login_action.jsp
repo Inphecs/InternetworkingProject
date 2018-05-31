@@ -9,33 +9,29 @@
     <body id="login">
         <div class="container">
 
-<% String listersFilePath = application.getRealPath("WEB-INF/listers.xml"); %>
-<jsp:useBean id="listersApp" class="uts.wsd.TextbookApplication" scope="application">
-    <jsp:setProperty name="listersApp" property="listersFilePath" value="<%=listersFilePath%>"/>
-</jsp:useBean>
+            <% String listersFilePath = application.getRealPath("WEB-INF/listers.xml");%>
+            <jsp:useBean id="listersApp" class="uts.wsd.TextbookApplication" scope="application">
+                <jsp:setProperty name="listersApp" property="listersFilePath" value="<%=listersFilePath%>"/>
+            </jsp:useBean>
             <%
                 String email = request.getParameter("email");
                 String password = request.getParameter("password");
-                
-                Listers listers = listersApp.getListers();                
+
+                Listers listers = listersApp.getListers();
                 Lister listerLogin = listers.login(email, password);
-                
+
                 session.setAttribute("passwordError", null);
                 session.setAttribute("emailError", null);
-                if(listerLogin != null){
+                if (listerLogin != null) {
                     session.setAttribute("passwordError", null);
                     session.setAttribute("emailError", null);
                     session.setAttribute("lister", listerLogin);
                     response.sendRedirect("manage_books.jsp");
-                }
-                else if(!listers.matchEmail(email))
-                {
+                } else if (!listers.matchEmail(email)) {
                     session.setAttribute("emailError", "Invalid Email");
                     session.setAttribute("passwordError", null);
                     response.sendRedirect("login.jsp");
-                }
-                else if(!listers.matchPassword(email, password))
-                {
+                } else if (!listers.matchPassword(email, password)) {
                     session.setAttribute("emailError", null);
                     session.setAttribute("passwordError", "Invalid Password");
                     response.sendRedirect("login.jsp");

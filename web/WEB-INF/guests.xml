@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <guests xmlns="http://www.uts.edu.au/31284/wsd-books"
- xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
- xsi:schemaLocation="http://www.uts.edu.au/31284/wsd-books books.xsd">
-        <guest>
-            <username>Ian</username>
-            <email>rnaahs@gmail.com</email>
-        </guest>   
-        <guest>
-            <username>Greg</username>
-            <email>greg1@gmail.com</email>
-        </guest>           
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.uts.edu.au/31284/wsd-books books.xsd">
+    <guest>
+        <username>Ian</username>
+        <email>rnaahs@gmail.com</email>
+    </guest>   
+    <guest>
+        <username>Greg</username>
+        <email>greg1@gmail.com</email>
+    </guest>           
 </guests>

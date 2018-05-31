@@ -5,7 +5,7 @@ import java.io.Serializable;
 import javax.xml.bind.annotation.*;
 
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlRootElement(name = "guests", namespace="http://www.uts.edu.au/31284/wsd-books")
+@XmlRootElement(name = "guests", namespace = "http://www.uts.edu.au/31284/wsd-books")
 public class Guests implements Serializable {
 
     @XmlElement(name = "guest")
@@ -23,11 +23,12 @@ public class Guests implements Serializable {
         guests.remove(guest);
     }
 
-    public Guest getGuest(String username, String email)
-    {
-        for(Guest guest : guests)
-            if(guest.getUsername().equals(username)&&guest.getEmail().equals(email))
+    public Guest getGuest(String username, String email) {
+        for (Guest guest : guests) {
+            if (guest.getUsername().equals(username) && guest.getEmail().equals(email)) {
                 return guest;
+            }
+        }
         return null;
-    }    
+    }
 }

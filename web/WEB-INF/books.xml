@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <books xmlns="http://www.uts.edu.au/31284/wsd-books"
- xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
- xsi:schemaLocation="http://www.uts.edu.au/31284/wsd-books books.xsd">
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.uts.edu.au/31284/wsd-books books.xsd">
     
     <book id="Hi1">
         <title>Book 1</title>        
@@ -27,7 +27,7 @@
         <lister>Greg</lister>
         <status>Available</status>
     </book>    
-        <book id='Hi3'>
+    <book id='Hi3'>
         <title>Book 1</title>        
         <author>Gregory O'Connor</author>
         <category>History</category>
@@ -51,7 +51,7 @@
         <lister>Nathan</lister>        
         <status>Available</status>
     </book>
-        <book id='Te2'>
+    <book id='Te2'>
         <title>Book 2</title>        
         <author>Nathan Carr</author>
         <category>Technology</category>
@@ -135,7 +135,7 @@
         <lister>Jean</lister>
         <status>Available</status>
     </book>
-        <book id='Mu2'>
+    <book id='Mu2'>
         <title>Book 8</title>        
         <author>San Holo</author>
         <category>Music</category>
@@ -147,7 +147,7 @@
         <lister>Jean</lister>
         <status>Available</status>
     </book>
-        <book id='Mu3'>
+    <book id='Mu3'>
         <title>Book 8</title>        
         <author>San Holo</author>
         <category>Music</category>
@@ -159,7 +159,7 @@
         <lister>Jean</lister>
         <status>Available</status>
     </book>
-        <book id='Mu4'>
+    <book id='Mu4'>
         <title>Book 8</title>        
         <author>San Holo</author>
         <category>Music</category>

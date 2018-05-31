@@ -10,7 +10,6 @@ public class Reservation implements Serializable {
     private Book book;
     @XmlElement(name = "guest")
     private Guest guest;
- 
 
     public Reservation() {
         super();
@@ -21,11 +20,11 @@ public class Reservation implements Serializable {
         this.book = book;
         this.guest = guest;
     }
-    
-    public Book getBook(){
+
+    public Book getBook() {
         return book;
     }
-    
+
     public Guest getGuest() {
         return guest;
     }

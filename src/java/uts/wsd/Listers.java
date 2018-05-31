@@ -5,7 +5,7 @@ import java.io.Serializable;
 import javax.xml.bind.annotation.*;
 
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlRootElement(name = "listers", namespace="http://www.uts.edu.au/31284/wsd-books")
+@XmlRootElement(name = "listers", namespace = "http://www.uts.edu.au/31284/wsd-books")
 public class Listers implements Serializable {
 
     @XmlElement(name = "lister")
@@ -20,12 +20,12 @@ public class Listers implements Serializable {
     }
 
     public void removeListerByEmail(String email) {
-        for(Lister lister : listers)
-            if(lister.getEmail().equals(email))
-            {
+        for (Lister lister : listers) {
+            if (lister.getEmail().equals(email)) {
                 listers.remove(lister);
                 return;
-            }        
+            }
+        }
     }
 
     public Lister login(String email, String password) {
@@ -36,26 +36,28 @@ public class Listers implements Serializable {
         }
         return null;
     }
-    
-    public boolean matchName(String name){
-        for(Lister lister : listers) {
-            if(lister.getName().equals(name))
-                return true;
-        }
-        return false;
-    }    
 
-    public boolean matchEmail(String email){
-        for(Lister lister : listers) {
-            if(lister.getEmail().equals(email))
+    public boolean matchName(String name) {
+        for (Lister lister : listers) {
+            if (lister.getName().equals(name)) {
                 return true;
+            }
         }
         return false;
     }
-    
-    public boolean matchPassword(String email, String password){
-        for(Lister lister: listers){
-            if(lister.getEmail().equals(email)&&lister.getPassword().equals(password)){
+
+    public boolean matchEmail(String email) {
+        for (Lister lister : listers) {
+            if (lister.getEmail().equals(email)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public boolean matchPassword(String email, String password) {
+        for (Lister lister : listers) {
+            if (lister.getEmail().equals(email) && lister.getPassword().equals(password)) {
                 return true;
             }
         }
